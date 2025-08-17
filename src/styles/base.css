@@ -1,8 +1,4 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-/* Optimized Google Fonts Import - Only essential weights */
+/* Optimized Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;600&family=Bebas+Neue&family=Orbitron:wght@700&display=swap');
 
 /* CSS Variables for Dark Theme */
