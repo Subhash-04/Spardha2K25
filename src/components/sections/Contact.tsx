@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
       icon: Mail,
       title: 'Email',
       info: 'acm@vvitu.net',
-    link: 'mailto:acm@vvitu.net',
+      link: 'mailto:acm@vvitu.net',
       gradient: 'from-blue-500 to-purple-600',
       bgColor: 'bg-gradient-to-r from-blue-500 to-purple-600',
     },
@@ -44,6 +44,11 @@ const Contact: React.FC = () => {
       title: 'Phone',
       info: '+91 123 456 7890',
       link: 'tel:+919876543210',
+      gradient: 'from-green-500 to-blue-600',
+      bgColor: 'bg-gradient-to-r from-green-500 to-blue-600',
+    },
+  ];
+
   const socialLinks = [
     { icon: Facebook, name: 'Facebook', link: '#', color: 'text-blue-500' },
     { icon: Twitter, name: 'Twitter', link: '#', color: 'text-sky-500' },
