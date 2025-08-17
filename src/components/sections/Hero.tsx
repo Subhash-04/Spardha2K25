@@ -5,7 +5,7 @@ import { usePerformanceOptimizer } from '../../utils/performanceOptimizer';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { metrics, createOptimizedParticles, preloadAssets } = usePerformanceOptimizer({
+  const { preloadAssets } = usePerformanceOptimizer({
     enableMediaCache: true,
     enableParticlePooling: true,
     maxParticlesPerSection: 400,
