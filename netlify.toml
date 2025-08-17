@@ -1,0 +1,37 @@
+[build]
+  # Directory to change to before starting a build
+  base = "."
+  
+  # Directory that contains the deploy-ready HTML files and assets
+  publish = "build"
+  
+  # Default build command
+  command = "npm install --legacy-peer-deps && npm run build"
+
+[build.environment]
+  # Node.js version
+  NODE_VERSION = "18"
+  
+  # NPM version
+  NPM_VERSION = "9"
+  
+  # Disable source maps for faster builds
+  GENERATE_SOURCEMAP = "false"
+  
+  # Disable CSS optimization to avoid minimizer errors
+  OPTIMIZE_CSS_ASSETS_PLUGIN = "false"
+  
+  # Disable inline runtime chunk
+  INLINE_RUNTIME_CHUNK = "false"
+  
+  # CI environment
+  CI = "true"
+  
+  # Skip preflight check
+  SKIP_PREFLIGHT_CHECK = "true"
+
+# Redirect rules for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
