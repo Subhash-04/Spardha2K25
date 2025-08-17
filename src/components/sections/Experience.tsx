@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import MagicCard from '../ui/MagicCard';
 
 // Import main video
