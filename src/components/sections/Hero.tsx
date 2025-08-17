@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useMemo, useCallback } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import { ArrowRight, Calendar, MapPin } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import { usePerformanceOptimizer } from '../../utils/performanceOptimizer';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { metrics, createOptimizedParticles, preloadAssets } = usePerformanceOptimizer({
+  const { preloadAssets } = usePerformanceOptimizer({
     enableMediaCache: true,
     enableParticlePooling: true,
     maxParticlesPerSection: 400,

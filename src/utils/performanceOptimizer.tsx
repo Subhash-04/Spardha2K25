@@ -258,7 +258,7 @@ export const usePerformanceOptimizer = (config?: Partial<PerformanceConfig>) => 
         optimizerRef.current.cleanup();
       }
     };
-  }, []);
+  }, [config]);
 
   const preloadAssets = useCallback(async (urls: string[]) => {
     if (optimizerRef.current) {

@@ -57,14 +57,6 @@ module.exports = {
           '50%': { opacity: '1' },
           '100%': { transform: 'translateX(100%)', opacity: '0' },
         },
-        'holographic-flow': {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
-        'crystal-rotate': {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
       },
       backdropBlur: {
         '4xl': '100px',

@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 
 // Import main video

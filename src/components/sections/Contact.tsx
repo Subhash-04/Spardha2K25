@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
       icon: Mail,
       title: 'Email',
       info: 'acm@vvitu.net',
-    link: 'mailto:acm@vvitu.net',
+      link: 'mailto:acm@vvitu.net',
       gradient: 'from-blue-500 to-purple-600',
       bgColor: 'bg-gradient-to-r from-blue-500 to-purple-600',
     },
@@ -44,24 +44,8 @@ const Contact: React.FC = () => {
       title: 'Phone',
       info: '+91 123 456 7890',
       link: 'tel:+919876543210',
-      gradient: 'from-green-500 to-teal-600',
-      bgColor: 'bg-gradient-to-r from-green-500 to-teal-600',
-    },
-    {
-      icon: MapPin,
-      title: 'Address',
-      info: 'Vasireddy Venkatadri International Technological University, Nambur (V), Guntur, AP 522508',
-      link: '#',
-      gradient: 'from-purple-500 to-pink-600',
-      bgColor: 'bg-gradient-to-r from-purple-500 to-pink-600',
-    },
-    {
-      icon: Globe,
-      title: 'Website',
-      info: 'www.vvituacm.org',
-    link: 'https://www.vvituacm.org',
-      gradient: 'from-amber-500 to-orange-600',
-      bgColor: 'bg-gradient-to-r from-amber-500 to-orange-600',
+      gradient: 'from-green-500 to-blue-600',
+      bgColor: 'bg-gradient-to-r from-green-500 to-blue-600',
     },
   ];
 
@@ -70,33 +54,6 @@ const Contact: React.FC = () => {
     { icon: Twitter, name: 'Twitter', link: '#', color: 'text-sky-500' },
     { icon: Instagram, name: 'Instagram', link: '#', color: 'text-pink-500' },
     { icon: Linkedin, name: 'LinkedIn', link: '#', color: 'text-blue-600' },
-  ];
-
-  const teamMembers = [
-    {
-      name: 'Dr. Rajesh Kumar',
-      role: 'Festival Director',
-      department: 'Computer Science',
-      email: 'director@vvitu.net',
-    },
-    {
-      name: 'Prof. Priya Sharma',
-      role: 'Event Coordinator',
-      department: 'Electronics',
-      email: 'coordinator@vvitu.net',
-    },
-    {
-      name: 'Arjun Reddy',
-      role: 'Student President',
-      department: 'ACM Chapter',
-      email: 'president@acmvvitu.org',
-    },
-    {
-      name: 'Sneha Patel',
-      role: 'Technical Head',
-      department: 'ACM Chapter',
-      email: 'tech@acmvvitu.org',
-    },
   ];
 
   return (

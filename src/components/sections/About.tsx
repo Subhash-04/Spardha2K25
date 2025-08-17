@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Users, Calendar, Trophy, Zap } from 'lucide-react';
+import { Users, Calendar, Trophy, Zap } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 
 const About: React.FC = () => {
