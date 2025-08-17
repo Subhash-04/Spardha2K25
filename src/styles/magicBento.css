@@ -103,8 +103,8 @@ html {
   inset: 0;
   padding: 6px;
   background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-      rgba(var(--glow-color, 0, 200, 255), calc(var(--glow-intensity, 0) * 0.8)) 0%,
-      rgba(var(--glow-color, 0, 200, 255), calc(var(--glow-intensity, 0) * 0.4)) 30%,
+      rgba(var(--glow-color), calc(var(--glow-intensity, 0) * 0.8)) 0%,
+      rgba(var(--glow-color), calc(var(--glow-intensity, 0) * 0.4)) 30%,
       transparent 60%);
   border-radius: inherit;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -132,14 +132,14 @@ html {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: rgba(var(--glow-color, 0, 200, 255), 0.3);
+  background: rgba(var(--glow-color), 0.3);
   border-radius: 50%;
   z-index: -1;
-  box-shadow: 0 0 10px rgba(var(--glow-color, 0, 200, 255), 0.8);
+  box-shadow: 0 0 10px rgba(var(--glow-color), 0.8);
 }
 
 .particle-container:hover {
-  box-shadow: 0 4px 20px rgba(46, 24, 78, 0.2), 0 0 30px rgba(var(--glow-color, 0, 200, 255), 0.5);
+  box-shadow: 0 4px 20px rgba(46, 24, 78, 0.2), 0 0 30px rgba(var(--glow-color), 0.5);
 }
 
 /* Text clamping */
