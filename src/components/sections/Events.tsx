@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Code, Palette, Wrench } from 'lucide-react';
@@ -23,7 +23,19 @@ const CircularGallery = React.lazy(() => import('../ui/CircularGallery'));
 const Events: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState('day1');
   const [showAllSpotEvents, setShowAllSpotEvents] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const days = [
     { id: 'day1', label: 'Day 1', date: 'August 22' },
@@ -398,7 +410,13 @@ const Events: React.FC = () => {
               </div>
 
               <div className="relative z-10">
-                <div style={{ height: '600px', position: 'relative' }}>
+                <div 
+                  className="gallery-container" 
+                  style={{ 
+                    height: isMobile ? '300px' : '600px', 
+                    position: 'relative' 
+                  }}
+                >
                   <Suspense fallback={
                     <div className="flex items-center justify-center h-full">
                       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
@@ -410,13 +428,14 @@ const Events: React.FC = () => {
                         text: event.title,
                         onClick: event.onClick
                       }))}
-                      bend={3} 
+                      bend={isMobile ? 1.5 : 3} 
                       textColor="#ffffff" 
                       borderRadius={0.05} 
-                      scrollEase={0.02}
+                      scrollEase={isMobile ? 0.05 : 0.02}
                       autoRotate={true}
-                      autoRotateSpeed={0.8}
-                      scrollSpeed={3}
+                      autoRotateSpeed={isMobile ? 0.5 : 0.8}
+                      scrollSpeed={isMobile ? 2 : 3}
+                      font={isMobile ? "bold 20px Figtree" : "bold 30px Figtree"}
                     />
                   </Suspense>
                 </div>

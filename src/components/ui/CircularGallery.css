@@ -8,3 +8,32 @@
 .circular-gallery:active {
   cursor: grabbing;
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .circular-gallery {
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .circular-gallery canvas {
+    max-width: 100%;
+    height: auto !important;
+    transform: scale(1);
+  }
+  
+  /* Improve touch responsiveness */
+  .circular-gallery:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Prevent text selection on mobile */
+  .circular-gallery {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}

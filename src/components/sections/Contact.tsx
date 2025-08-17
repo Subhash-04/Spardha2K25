@@ -47,7 +47,23 @@ const Contact: React.FC = () => {
       gradient: 'from-green-500 to-blue-600',
       bgColor: 'bg-gradient-to-r from-green-500 to-blue-600',
     },
-  ];
+    {
+      icon: MapPin,
+      title: 'Address',
+      info: 'VVIT Campus, Guntur, AP',
+      link: 'https://maps.google.com/?q=VVIT+Guntur',
+      gradient: 'from-purple-500 to-pink-600',
+      bgColor: 'bg-gradient-to-r from-purple-500 to-pink-600',
+    },
+    {
+      icon: Globe,
+      title: 'Website',
+      info: 'www.vvit.net',
+      link: 'https://www.vvit.net',
+      gradient: 'from-orange-500 to-red-600',
+      bgColor: 'bg-gradient-to-r from-orange-500 to-red-600',
+    },
+   ];
 
   const socialLinks = [
     { icon: Facebook, name: 'Facebook', link: '#', color: 'text-blue-500' },
