@@ -102,9 +102,11 @@ html {
   position: absolute;
   inset: 0;
   padding: 6px;
+  --glow-alpha-strong: calc(var(--glow-intensity, 0) * 0.8);
+  --glow-alpha-weak: calc(var(--glow-intensity, 0) * 0.4);
   background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-      rgba(var(--glow-color), calc(var(--glow-intensity, 0) * 0.8)) 0%,
-      rgba(var(--glow-color), calc(var(--glow-intensity, 0) * 0.4)) 30%,
+      rgba(var(--glow-color), var(--glow-alpha-strong)) 0%,
+      rgba(var(--glow-color), var(--glow-alpha-weak)) 30%,
       transparent 60%);
   border-radius: inherit;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
