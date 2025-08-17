@@ -81,23 +81,32 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
       {/* Main Content */}
       <div className="relative flex flex-col items-center">
         {/* Preloader Container */}
-         <div className="relative w-24 h-24 mb-8">
+         <div className="relative w-32 h-32 mb-8">
            {/* Outer Circle */}
-           <div className="absolute top-0 left-0 w-full h-full border-2 border-transparent border-t-blue-500 rounded-full animate-spin-slow" />
+           <div className="absolute top-0 left-0 w-full h-full border-4 border-transparent border-t-blue-500 rounded-full animate-spin-slow shadow-lg shadow-blue-500/30" />
            
            {/* Middle Circle */}
-           <div className="absolute top-2 left-2 w-20 h-20 border-2 border-transparent border-t-cyan-400 rounded-full animate-spin-reverse" />
+           <div className="absolute top-3 left-3 w-24 h-24 border-2 border-transparent border-t-cyan-400 rounded-full animate-spin-reverse shadow-md shadow-cyan-400/20" />
            
            {/* Inner Circle */}
-           <div className="absolute top-4 left-4 w-16 h-16 border-2 border-transparent border-t-blue-300 rounded-full animate-spin-fast" />
+           <div className="absolute top-6 left-6 w-20 h-20 border-2 border-transparent border-t-blue-300 rounded-full animate-spin-fast shadow-sm shadow-blue-300/10" />
           
-          {/* Logo */}
+          {/* Logo Container with Glow Effect */}
            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-             <img
-               src={vvitLogo}
-               alt="VVITU ACM Logo"
-               className="w-20 h-20 object-contain rounded-full"
-             />
+             <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-blue-400/30 shadow-2xl shadow-blue-500/20 flex items-center justify-center">
+               {/* Inner glow effect */}
+               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/10 to-cyan-400/5 animate-pulse" />
+               
+               {/* Logo */}
+               <img
+                 src={vvitLogo}
+                 alt="VVITU ACM Logo"
+                 className="w-12 h-12 object-contain relative z-10 drop-shadow-lg filter brightness-110 contrast-110"
+               />
+               
+               {/* Outer glow ring */}
+               <div className="absolute -inset-1 rounded-full border border-blue-400/20 animate-pulse" style={{ animationDelay: '0.5s' }} />
+             </div>
            </div>
         </div>
 

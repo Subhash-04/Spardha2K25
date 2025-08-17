@@ -1,0 +1,313 @@
+/* Text Effects */
+.text-gradient {
+  background: linear-gradient(135deg,
+    hsl(210, 100%, 65%) 0%,
+    hsl(195, 100%, 60%) 25%,
+    hsl(240, 100%, 70%) 50%,
+    hsl(278, 100%, 75%) 75%,
+    hsl(210, 100%, 65%) 100%);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic-flow 4s ease-in-out infinite;
+}
+
+.text-holographic {
+  background: linear-gradient(45deg,
+    #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #ff006e);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic-flow 3s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+/* Neumorphism Effects */
+.neu-button {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  box-shadow: 
+    8px 8px 16px #0a0f1a,
+    -8px -8px 16px #2a3441,
+    inset 2px 2px 4px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-button:hover {
+  box-shadow: 
+    12px 12px 24px #0a0f1a,
+    -12px -12px 24px #2a3441,
+    inset 3px 3px 6px rgba(255, 255, 255, 0.08);
+}
+
+.neu-input {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  box-shadow: 
+    inset 6px 6px 12px #0a0f1a,
+    inset -6px -6px 12px #2a3441;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  color: hsl(210, 100%, 95%);
+}
+
+/* Crystal Facets Effects */
+.crystal-facet-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 33.33%;
+  background: linear-gradient(to bottom-right, rgba(255,255,255,0.4), transparent);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.crystal-facet-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(to top-left, rgba(255,255,255,0.25), transparent);
+  border-bottom-right-radius: 16px;
+}
+
+.crystal-facet-center {
+  position: absolute;
+  top: 33.33%;
+  left: 33.33%;
+  width: 33.33%;
+  height: 33.33%;
+  background: linear-gradient(to bottom-right, rgba(255,255,255,0.2), transparent);
+  border-radius: 50%;
+}
+
+/* Background Atmospheric Effects */
+.bg-orb-cyan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, rgba(6,182,212,0.3), rgba(59,130,246,0.2));
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.2;
+}
+
+.bg-orb-blue {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 192px;
+  height: 192px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(147,51,234,0.2));
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.2;
+}
+
+.bg-orb-purple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 128px;
+  height: 128px;
+  background: linear-gradient(135deg, rgba(147,51,234,0.3), rgba(236,72,153,0.2));
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.2;
+}
+
+/* Scan Line Animation */
+.scan-line-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.5), transparent);
+  animation: scan-line 3s linear infinite;
+}
+
+.scan-line-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(6, 182, 212, 0.4), transparent);
+  animation: scan-line 4s linear infinite reverse;
+}
+
+/* Crystal Rotation Animations */
+.crystal-rotate-8s {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom-right, rgba(255,255,255,0.15), transparent);
+  border-radius: 50%;
+  animation: crystal-rotate 8s linear infinite;
+}
+
+.crystal-rotate-12s {
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top-left, rgba(255,255,255,0.1), transparent);
+  border-radius: 50%;
+  animation: crystal-rotate 12s linear infinite reverse;
+}
+
+/* 3D Card Effects */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: 
+    scale(1.08)
+    rotateY(8deg)
+    rotateX(5deg)
+    translateZ(50px);
+}
+
+/* Legend Container */
+.legend-container {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(40px) saturate(1.8);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.legend-bg-effect {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(to bottom-left, rgba(59,130,246,0.3), transparent);
+  border-radius: 50%;
+  filter: blur(24px);
+  opacity: 0.2;
+}
+
+/* Utility Classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* HUD Corner Elements */
+.hud-corner-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid rgba(59, 130, 246, 0.6);
+  border-right: 2px solid rgba(59, 130, 246, 0.6);
+  border-top-right-radius: 4px;
+  opacity: 0.8;
+}
+
+.hud-corner-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid rgba(59, 130, 246, 0.6);
+  border-left: 2px solid rgba(59, 130, 246, 0.6);
+  border-bottom-left-radius: 4px;
+  opacity: 0.8;
+}
+
+.hud-corner-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid rgba(59, 130, 246, 0.6);
+  border-left: 2px solid rgba(59, 130, 246, 0.6);
+  border-top-left-radius: 4px;
+  opacity: 0.8;
+}
+
+.hud-corner-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid rgba(59, 130, 246, 0.6);
+  border-right: 2px solid rgba(59, 130, 246, 0.6);
+  border-bottom-right-radius: 4px;
+  opacity: 0.8;
+}
+
+.glow-tech {
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.5), 0 0 40px rgba(0, 200, 255, 0.2);
+  animation: tech-pulse 3s infinite ease-in-out;
+}
+
+/* Bento Card Effects */
+.magic-bento-container .card,
+.magic-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.15);
+}
+
+.magic-bento-container .card:hover,
+.magic-card:hover {
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.4), 0 0 50px rgba(0, 200, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.magic-bento-container .card::after,
+.magic-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  z-index: -1;
+  background: radial-gradient(800px circle at var(--glow-x) var(--glow-y), 
+    rgba(0, 200, 255, 0.2), 
+    transparent 30%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.magic-bento-container .card:hover::after,
+.magic-card:hover::after {
+  opacity: 1;
+}
+
+.particle {
+  pointer-events: none !important;
+  opacity: 0.8;
+  animation: particle-fade 3s ease-in-out infinite;
+}

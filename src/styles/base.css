@@ -1,0 +1,100 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Optimized Google Fonts Import - Only essential weights */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;600&family=Bebas+Neue&family=Orbitron:wght@700&display=swap');
+
+/* CSS Variables for Dark Theme */
+:root {
+  --background: 220 50% 4%;
+  --foreground: 210 100% 95%;
+  --primary: 210 100% 65%;
+  --primary-glow: 215 100% 75%;
+  --accent: 195 100% 60%;
+  --secondary: 220 50% 10%;
+  --muted: 220 50% 8%;
+  --border: 220 50% 18%;
+  --card: 220 50% 6%;
+  --glass-bg: 220 50% 8%;
+  --liquid-glow: 210 100% 65%;
+}
+
+/* Optimized Base Styles with Performance Focus */
+* {
+  border-color: hsl(var(--border));
+  transition: opacity 0.2s ease;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+*:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+  transition: outline 0.2s ease;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button, a, input, textarea, select {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover, a:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+button:active, a:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary-glow));
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .dashboard-glass,
+  .crystal-glass,
+  .ultra-liquid-glass {
+    backdrop-filter: blur(20px) saturate(1.5);
+  }
+  
+  .text-gradient,
+  .text-holographic {
+    background-size: 200% 200%;
+  }
+  
+  .card-3d:hover {
+    transform: scale(1.05) rotateY(4deg) rotateX(2deg);
+  }
+}

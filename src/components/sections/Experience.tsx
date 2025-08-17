@@ -4,7 +4,7 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 
 // Import main video
-import mainVideo from '../../assets/videos/main.mp4';
+import mainVideo from '../../assets/videos/main.mp4'; // Temporarily disabled for optimization
 
 const Experience: React.FC = () => {
   const containerVariants = {

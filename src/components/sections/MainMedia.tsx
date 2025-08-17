@@ -4,7 +4,7 @@ import { Image as ImageIcon } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import LazyImage from '../ui/LazyImage';
 import mainPoster from '../../assets/images/main.jpg';
-import mainVideo from '../../assets/videos/main.mp4';
+import mainVideo from '../../assets/videos/main.mp4'; // Temporarily disabled for optimization
 
 const MainMedia: React.FC = () => {
   const containerVariants = {
