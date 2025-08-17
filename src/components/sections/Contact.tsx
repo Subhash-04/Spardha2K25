@@ -44,27 +44,6 @@ const Contact: React.FC = () => {
       title: 'Phone',
       info: '+91 123 456 7890',
       link: 'tel:+919876543210',
-      gradient: 'from-green-500 to-teal-600',
-      bgColor: 'bg-gradient-to-r from-green-500 to-teal-600',
-    },
-    {
-      icon: MapPin,
-      title: 'Address',
-      info: 'Vasireddy Venkatadri International Technological University, Nambur (V), Guntur, AP 522508',
-      link: '#',
-      gradient: 'from-purple-500 to-pink-600',
-      bgColor: 'bg-gradient-to-r from-purple-500 to-pink-600',
-    },
-    {
-      icon: Globe,
-      title: 'Website',
-      info: 'www.vvituacm.org',
-    link: 'https://www.vvituacm.org',
-      gradient: 'from-amber-500 to-orange-600',
-      bgColor: 'bg-gradient-to-r from-amber-500 to-orange-600',
-    },
-  ];
-
   const socialLinks = [
     { icon: Facebook, name: 'Facebook', link: '#', color: 'text-blue-500' },
     { icon: Twitter, name: 'Twitter', link: '#', color: 'text-sky-500' },

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useMemo, useCallback } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import { ArrowRight, Calendar, MapPin } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import { usePerformanceOptimizer } from '../../utils/performanceOptimizer';
