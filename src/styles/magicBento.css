@@ -1,0 +1,254 @@
+.bento-section {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+  --border-color: #392e4e;
+  --background-dark: #060010;
+  --white: hsl(0, 0%, 100%);
+  --purple-primary: rgb(0, 200, 255);
+  --purple-glow: rgba(0, 200, 255, 0.5);
+  --purple-border: rgba(63, 130, 198, 0.695);
+  --sky-glow: rgba(0, 200, 255, 0.8);
+  --neon-glow: 0 0 15px rgba(0, 200, 255, 0.7), 0 0 30px rgba(0, 200, 255, 0.4);
+}
+
+body {
+  --glow-color: 0, 200, 255;
+}
+
+/* Enhanced transitions for better performance */
+.transition-optimized {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  will-change: transform, opacity;
+}
+
+/* Smooth transition utilities */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-bounce {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.transition-elastic {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 200, 255, 0.3);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.5), 0 0 60px rgba(0, 200, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Button enhancement transitions */
+.btn-enhanced {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-enhanced:hover::before {
+  left: 100%;
+}
+
+.btn-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 200, 255, 0.3);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Border glow effect for any element */
+.card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 6px;
+  background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+      rgba(var(--glow-color, 0, 200, 255), calc(var(--glow-intensity, 0) * 0.8)) 0%,
+      rgba(var(--glow-color, 0, 200, 255), calc(var(--glow-intensity, 0) * 0.4)) 30%,
+      transparent 60%);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card--border-glow:hover::after {
+  opacity: 1;
+}
+
+.card--border-glow:hover {
+  box-shadow: 0 4px 20px rgba(0, 200, 255, 0.4), 0 0 30px rgba(0, 200, 255, 0.3);
+}
+
+/* Particle effects */
+.particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(var(--glow-color, 0, 200, 255), 0.3);
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(var(--glow-color, 0, 200, 255), 0.8);
+}
+
+.particle-container:hover {
+  box-shadow: 0 4px 20px rgba(46, 24, 78, 0.2), 0 0 30px rgba(var(--glow-color, 0, 200, 255), 0.5);
+}
+
+/* Text clamping */
+.text-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Card base styles */
+.magic-card {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+  will-change: transform, box-shadow;
+}
+
+.magic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neon-glow);
+}
+
+.ultra-liquid-glass, 
+.crystal-glass, 
+.dashboard-glass {
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.15);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s ease;
+  will-change: transform, box-shadow;
+}
+
+.ultra-liquid-glass:hover, 
+.crystal-glass:hover, 
+.dashboard-glass:hover {
+  box-shadow: var(--neon-glow);
+}
+
+/* Enhanced card appearance and animation */
+[class*="card-3d"] {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+}
+
+[class*="card-3d"]:hover {
+  box-shadow: var(--neon-glow);
+}
+
+/* Global spotlight styles */
+.global-spotlight {
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 1000;
+  background: radial-gradient(
+    circle,
+    rgba(0, 200, 255, 0.15) 0%,
+    rgba(0, 200, 255, 0.08) 15%,
+    rgba(0, 200, 255, 0.04) 25%,
+    rgba(0, 200, 255, 0.02) 40%,
+    rgba(0, 200, 255, 0.01) 65%,
+    transparent 70%
+  ) !important;
+}
+
+/* Animation for all interactive elements */
+.animate-glow-subtle {
+  animation: glow-subtle 4s ease-in-out infinite;
+}
+
+@keyframes glow-subtle {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 200, 255, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(0, 200, 255, 0.6); }
+}
+
+/* Force apply neon effect to all card components */
+.crystal-glass,
+.ultra-liquid-glass,
+.dashboard-glass,
+.neu-button,
+[class*="card-3d"] {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add neon glow to all hud elements */
+[class*="hud-corner"],
+[class*="hud-status"],
+.scan-line-top,
+.scan-line-bottom,
+.scan-line-middle {
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.3);
+}
