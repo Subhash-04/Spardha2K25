@@ -72,33 +72,6 @@ const Contact: React.FC = () => {
     { icon: Linkedin, name: 'LinkedIn', link: '#', color: 'text-blue-600' },
   ];
 
-  const teamMembers = [
-    {
-      name: 'Dr. Rajesh Kumar',
-      role: 'Festival Director',
-      department: 'Computer Science',
-      email: 'director@vvitu.net',
-    },
-    {
-      name: 'Prof. Priya Sharma',
-      role: 'Event Coordinator',
-      department: 'Electronics',
-      email: 'coordinator@vvitu.net',
-    },
-    {
-      name: 'Arjun Reddy',
-      role: 'Student President',
-      department: 'ACM Chapter',
-      email: 'president@acmvvitu.org',
-    },
-    {
-      name: 'Sneha Patel',
-      role: 'Technical Head',
-      department: 'ACM Chapter',
-      email: 'tech@acmvvitu.org',
-    },
-  ];
-
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
       {/* Background Effects */}

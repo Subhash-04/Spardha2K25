@@ -56,8 +56,8 @@ module.exports = {
           '0%': { transform: 'translateX(-100%)', opacity: '0' },
           '50%': { opacity: '1' },
           '100%': { transform: 'translateX(100%)', opacity: '0' },
-              },
-      }
+        },
+      },
       backdropBlur: {
         '4xl': '100px',
       },

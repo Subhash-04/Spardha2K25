@@ -8,17 +8,17 @@ import blindPoster from '../../assets/images/blind.jpg';
 import paperPoster from '../../assets/images/paper.jpg';
 import traditionalPoster from '../../assets/images/Traditional.jpg';
 import promptPoster from '../../assets/images/prompt.jpg';
+import spotImage1 from '../../assets/images/1.png';
+import spotImage2 from '../../assets/images/2.png';
+import spotImage3 from '../../assets/images/3.png';
+import spotImage4 from '../../assets/images/4.png';
+import spotImage5 from '../../assets/images/5.png';
+import spotImage6 from '../../assets/images/6.png';
+import spotImage7 from '../../assets/images/7.png';
+import spotImage8 from '../../assets/images/8.png';
 
 // Lazy load CircularGallery for better performance
 const CircularGallery = React.lazy(() => import('../ui/CircularGallery'));
-
-// Dynamic image loading for better performance
-const getSpotEventImage = (imageNumber: number) => {
-  return require(`../../assets/images/${imageNumber}.png`);
-};
-
-// Cache for loaded images
-const imageCache: { [key: number]: string } = {};
 
 const Events: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState('day1');
@@ -96,7 +96,7 @@ const Events: React.FC = () => {
         id: 1,
         eventId: "spot-event-1",
         title: "Image Word Guessing",
-        image: getSpotEventImage(1),
+        image: spotImage1,
         description: "Fun word-guessing game with images",
         onClick: () => navigate('/event/spot-event-1'),
       },
@@ -104,7 +104,7 @@ const Events: React.FC = () => {
         id: 2,
         eventId: "spot-event-2", 
         title: "Tech Trivia",
-        image: getSpotEventImage(2),
+        image: spotImage2,
         description: "Test your tech knowledge",
         onClick: () => navigate('/event/spot-event-2'),
       },
@@ -112,7 +112,7 @@ const Events: React.FC = () => {
         id: 3,
         eventId: "spot-event-3",
         title: "Code Debugging",
-        image: getSpotEventImage(3),
+        image: spotImage3,
         description: "Find and fix bugs in code",
         onClick: () => navigate('/event/spot-event-3'),
       },
@@ -120,7 +120,7 @@ const Events: React.FC = () => {
         id: 4,
         eventId: "spot-event-4",
         title: "UI/UX Design",
-        image: getSpotEventImage(4),
+        image: spotImage4,
         description: "Create beautiful UI/UX designs",
         onClick: () => navigate('/event/spot-event-4'),
       },
@@ -130,7 +130,7 @@ const Events: React.FC = () => {
         id: 5,
         eventId: "spot-event-5",
         title: "Spot Event 5",
-        image: getSpotEventImage(5),
+        image: spotImage5,
         description: "First spot event challenge for Day 2",
         onClick: () => navigate('/event/spot-event-5'),
       },
@@ -138,7 +138,7 @@ const Events: React.FC = () => {
         id: 6,
         eventId: "spot-event-6",
         title: "Spot Event 6",
-        image: getSpotEventImage(6),
+        image: spotImage6,
         description: "Second spot event for Day 2",
         onClick: () => navigate('/event/spot-event-6'),
       },
@@ -146,7 +146,7 @@ const Events: React.FC = () => {
         id: 7,
         eventId: "spot-event-7",
         title: "Spot Event 7",
-        image: getSpotEventImage(7),
+        image: spotImage7,
         description: "Third spot event challenge for Day 2",
         onClick: () => navigate('/event/spot-event-7'),
       },
@@ -154,7 +154,7 @@ const Events: React.FC = () => {
         id: 8,
         eventId: "spot-event-8",
         title: "Spot Event 8",
-        image: getSpotEventImage(8),
+        image: spotImage8,
         description: "Final spot event for Day 2",
         onClick: () => navigate('/event/spot-event-8'),
       },
