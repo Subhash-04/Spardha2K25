@@ -310,14 +310,10 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-
-
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs text-muted-foreground font-orbitron">SCROLL TO EXPLORE</span>
-            <div className="w-px h-8 bg-gradient-to-b from-primary to-transparent" />
-          </div>
+        <div className="flex flex-col items-center gap-2 mt-8 animate-bounce-slow">
+          <span className="text-xs text-muted-foreground font-orbitron">SCROLL TO EXPLORE</span>
+          <div className="w-px h-8 bg-gradient-to-b from-primary to-transparent" />
         </div>
       </div>
 
