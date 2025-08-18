@@ -293,7 +293,7 @@ const Events: React.FC = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedDay}
-            className="grid md:grid-cols-2 gap-6 lg:gap-8"
+            className="grid md:grid-cols-3 gap-4 lg:gap-6"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -305,7 +305,7 @@ const Events: React.FC = () => {
                 variants={cardVariants}
               >
                 <MagicCard 
-                  className="ultra-liquid-glass rounded-3xl relative overflow-hidden min-h-[400px] lg:min-h-[450px] flex flex-col transition-smooth hover:scale-105 hover:shadow-[0_0_40px_rgba(0,200,255,0.6)] hover:border-blue-400/50"
+                  className="ultra-liquid-glass rounded-3xl relative overflow-hidden min-h-[500px] lg:min-h-[550px] flex flex-col transition-smooth hover:scale-105 hover:shadow-[0_0_40px_rgba(0,200,255,0.6)] hover:border-blue-400/50"
                   glowColor="0, 200, 255"
                   enableTilt={true}
                   enableMagnetism={true}
