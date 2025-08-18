@@ -82,48 +82,9 @@ body {
   box-shadow: 0 10px 25px rgba(0, 200, 255, 0.3);
 }
 
-/* Optimized Smooth Scrolling with Performance Enhancements */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-}
-
-/* Scroll Performance Optimizations */
-* {
-  /* Enable hardware acceleration for better performance */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* Optimize scrolling performance */
-body {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Reduce motion for better performance on low-end devices */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-/* Performance optimizations for animations during scroll */
-.animate-bounce-slow,
-.animate-float-3d,
-.animate-shimmer,
-.animate-pulse-zoom {
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-/* Optimize backdrop filters for better scroll performance */
-.dashboard-glass,
-.crystal-glass,
-.ultra-liquid-glass {
-  contain: layout style paint;
-  will-change: transform;
 }
 
 /* Optimize animations for better performance */

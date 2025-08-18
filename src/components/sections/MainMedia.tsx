@@ -32,9 +32,9 @@ const MainMedia: React.FC = () => {
       </section>
 
       <article className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header with Title */}
+        {/* Section Header */}
         <motion.header
-          className="text-center mb-20"
+          className="text-center mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -42,10 +42,7 @@ const MainMedia: React.FC = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gradient font-audiowide mb-8"
-            style={{
-              textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4)'
-            }}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient font-audiowide mb-6"
           >
             SPARDHA 2K25
           </motion.h2>
@@ -57,22 +54,6 @@ const MainMedia: React.FC = () => {
             Immerse yourself in the futuristic aesthetic.
           </motion.p>
         </motion.header>
-
-        {/* Main Poster Title */}
-        <motion.div
-          className="text-center mb-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.h3
-            variants={itemVariants}
-            className="text-2xl sm:text-3xl font-bold text-white font-audiowide mb-4"
-          >
-            OFFICIAL POSTER
-          </motion.h3>
-        </motion.div>
 
         <section className="flex flex-col gap-12">
           {/* Main Poster - Full Width */}
@@ -103,6 +84,9 @@ const MainMedia: React.FC = () => {
                       alt="Spardha 2025 Main Poster" 
                       className="w-full object-contain max-h-[600px]"
                     />
+                    <span className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+
+                    
                     <span className="absolute top-4 right-4 bg-black/50 p-2 rounded-lg backdrop-blur-sm">
                       <ImageIcon className="w-5 h-5 text-white" />
                     </span>

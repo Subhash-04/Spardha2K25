@@ -54,6 +54,14 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <header
       className="fixed top-0 left-0 right-0 z-[99999] transition-all duration-300 animate-slide-down animation-delay-200 dashboard-glass"
+      style={{ 
+        position: 'fixed !important', 
+        top: '0 !important', 
+        left: '0 !important', 
+        right: '0 !important',
+        zIndex: '99999 !important',
+        width: '100% !important'
+      }}
     >
       {/* Scan Lines */}
       <div className="scan-line-top" />
