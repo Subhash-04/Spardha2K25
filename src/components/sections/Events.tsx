@@ -293,7 +293,7 @@ const Events: React.FC = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedDay}
-            className="grid md:grid-cols-3 gap-4 lg:gap-6"
+            className="grid md:grid-cols-2 gap-6 lg:gap-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
