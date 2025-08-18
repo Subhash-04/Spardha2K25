@@ -14,7 +14,7 @@ const GlobalEffects: React.FC = () => {
       height: 800px;
       border-radius: 50%;
       pointer-events: none;
-      z-index: 2000;
+      z-index: 1000;
       opacity: 0;
       transform: translate(-50%, -50%);
       mix-blend-mode: screen;
