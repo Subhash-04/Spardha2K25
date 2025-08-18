@@ -5,19 +5,8 @@ import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import GlobalEffects from '../components/ui/GlobalEffects';
 
-// Global Styles for MagicBento
-import '../styles/magicBento.css';
-
-// Priority loading: Load Hero immediately, others lazily
-import Hero from '../components/sections/Hero';
-
-// Lazy load non-critical sections for better performance
-const Experience = React.lazy(() => import('../components/sections/Experience'));
-const About = React.lazy(() => import('../components/sections/About'));
-const Events = React.lazy(() => import('../components/sections/Events'));
-const MainMedia = React.lazy(() => import('../components/sections/MainMedia'));
-const CampusNavigation = React.lazy(() => import('../components/sections/CampusNavigation'));
-const Contact = React.lazy(() => import('../components/sections/Contact'));
+// Campus Navigation Component
+import CampusNavigation from '../components/sections/CampusNavigation';
 
 // Loading component for better UX
 const SectionLoader = () => (
@@ -26,9 +15,9 @@ const SectionLoader = () => (
   </div>
 );
 
-interface MainPageProps {}
+interface CampusPageProps {}
 
-const MainPage: React.FC<MainPageProps> = () => {
+const CampusPage: React.FC<CampusPageProps> = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Apply global glow effects to all cards */}
@@ -37,9 +26,9 @@ const MainPage: React.FC<MainPageProps> = () => {
       {/* Fixed Header */}
       <Header />
 
-      {/* Main Sections */}
-      <main className="relative">
-        {/* 3D Background - Spline Integration would go here */}
+      {/* Main Content */}
+      <main className="relative pt-20">
+        {/* 3D Background */}
         <div className="fixed inset-0 -z-10 bg-gradient-to-br from-background via-secondary to-background">
           {/* Animated Background Grid */}
           <div 
@@ -58,32 +47,9 @@ const MainPage: React.FC<MainPageProps> = () => {
           <div className="absolute bottom-0 right-0 bg-background w-48 h-16 sm:w-56 sm:h-20 md:w-64 md:h-24 lg:w-72 lg:h-28 z-10" />
         </div>
 
-        {/* Hero Section - Loaded immediately for faster initial render */}
-        <Hero />
-
-        {/* Events Section */}
+        {/* Campus Navigation Section */}
         <Suspense fallback={<SectionLoader />}>
-          <Events />
-        </Suspense>
-
-        {/* Experience Section */}
-        <Suspense fallback={<SectionLoader />}>
-          <Experience />
-        </Suspense>
-        
-        {/* About Section */}
-        <Suspense fallback={<SectionLoader />}>
-          <About />
-        </Suspense>
-
-        {/* Main Media Section */}
-        <Suspense fallback={<SectionLoader />}>
-          <MainMedia />
-        </Suspense>
-
-        {/* Contact Section */}
-        <Suspense fallback={<SectionLoader />}>
-          <Contact />
+          <CampusNavigation />
         </Suspense>
       </main>
 
@@ -93,4 +59,4 @@ const MainPage: React.FC<MainPageProps> = () => {
   );
 };
 
-export default MainPage;
+export default CampusPage;

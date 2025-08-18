@@ -32,36 +32,37 @@ const Contact: React.FC = () => {
 
   const contactInfo = [
     {
-      icon: Mail,
-      title: 'Email',
-      info: 'acm@vvitu.net',
-      link: 'mailto:acm@vvitu.net',
-      gradient: 'from-blue-500 to-purple-600',
-      bgColor: 'bg-gradient-to-r from-blue-500 to-purple-600',
-    },
-    {
       icon: Phone,
-      title: 'Phone',
+      title: 'Phone 1',
       info: '+91 123 456 7890',
-      link: 'tel:+919876543210',
+      link: 'tel:+911234567890',
       gradient: 'from-green-500 to-blue-600',
       bgColor: 'bg-gradient-to-r from-green-500 to-blue-600',
     },
     {
-      icon: MapPin,
-      title: 'Address',
-      info: 'VVIT Campus, Guntur, AP',
-      link: 'https://maps.google.com/?q=VVIT+Guntur',
-      gradient: 'from-purple-500 to-pink-600',
-      bgColor: 'bg-gradient-to-r from-purple-500 to-pink-600',
+      icon: Phone,
+      title: 'Phone 2',
+      info: '+91 987 654 3210',
+      link: 'tel:+919876543210',
+      gradient: 'from-blue-500 to-green-600',
+      bgColor: 'bg-gradient-to-r from-blue-500 to-green-600',
     },
     {
-      icon: Globe,
-      title: 'Website',
-      info: 'www.vvit.net',
-      link: 'https://www.vvit.net',
-      gradient: 'from-orange-500 to-red-600',
-      bgColor: 'bg-gradient-to-r from-orange-500 to-red-600',
+      icon: Phone,
+      title: 'Phone 3',
+      info: '+91 555 123 4567',
+      link: 'tel:+915551234567',
+      gradient: 'from-purple-500 to-blue-600',
+      bgColor: 'bg-gradient-to-r from-purple-500 to-blue-600',
+    },
+
+    {
+      icon: Instagram,
+      title: 'Instagram',
+      info: '@spardha2025',
+      link: 'https://instagram.com/spardha2025',
+      gradient: 'from-pink-500 to-orange-600',
+      bgColor: 'bg-gradient-to-r from-pink-500 to-orange-600',
     },
    ];
 
@@ -81,7 +82,7 @@ const Contact: React.FC = () => {
         <div className="bg-orb-purple animate-float-3d" style={{ top: '60%', left: '70%', animationDelay: '4s' }} />
         
         {/* Additional floating particles */}
-        {[...Array(15)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={`contact-particle-${i}`}
             className="absolute bg-blue-400 rounded-full animate-float opacity-20"
@@ -343,53 +344,11 @@ const Contact: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Call to Action */}
-        <motion.div
-          className="text-center mt-16"
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <MagicCard
-            className="ultra-liquid-glass p-8 rounded-3xl max-w-3xl mx-auto relative"
-            glowColor="0, 200, 255"
-            enableTilt={true}
-            enableMagnetism={true}
-            clickEffect={true}
-            particleCount={15}
-          >
-            <div className="absolute inset-0">
-              <div className="bg-orb-cyan opacity-20" />
-              <div className="bg-orb-purple opacity-15" />
-              <div className="crystal-facet-center" />
-            </div>
 
-            <div className="relative z-10">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gradient font-audiowide mb-4">
-                Ready to Join the Revolution?
-              </h3>
-              <p className="text-muted-foreground font-inter mb-6 leading-relaxed">
-                Don't miss out on the most epic techno-cultural festival of 2025. 
-                Register now and be part of the Tech experience.
-              </p>
-              <motion.button
-                className="neu-button px-8 py-3 rounded-lg text-lg font-semibold text-primary font-orbitron"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Register Now
-              </motion.button>
-            </div>
-
-            <div className="scan-line-top" />
-            <div className="scan-line-bottom" />
-          </MagicCard>
-        </motion.div>
       </div>
 
       {/* Space Particles - Stars */}
-      {[...Array(180)].map((_, i) => {
+      {[...Array(90)].map((_, i) => {
         const size = Math.random() * 2 + 1;
         const blueShade = Math.random() > 0.5 ? 'bg-blue-400' : 'bg-cyan-400';
         const glowIntensity = Math.random() * 0.6 + 0.3;

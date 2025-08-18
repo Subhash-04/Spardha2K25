@@ -13,6 +13,7 @@ import './styles/magicBento.css';
 const MainPage = React.lazy(() => import('./pages/MainPage'));
 const EventsPage = React.lazy(() => import('./pages/EventsPage'));
 const EventDetailPage = React.lazy(() => import('./pages/EventDetailPage'));
+const CampusPage = React.lazy(() => import('./pages/CampusPage'));
 const NotFound = React.lazy(() => import('./components/pages/NotFound'));
 
 
@@ -65,6 +66,7 @@ function App() {
               <Route path="/" element={<MainPage />} />
               <Route path="/events" element={<EventsPage />} />
               <Route path="/event/:eventId" element={<EventDetailPage />} />
+              <Route path="/campus" element={<CampusPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

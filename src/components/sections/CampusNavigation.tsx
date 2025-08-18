@@ -370,7 +370,7 @@ const CampusNavigation: React.FC = () => {
       </div>
 
       {/* Floating Particles */}
-      {[...Array(100)].map((_, i) => (
+      {[...Array(50)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-cyan-400/40 rounded-full"

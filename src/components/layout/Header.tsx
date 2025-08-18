@@ -16,10 +16,12 @@ const Header: React.FC<HeaderProps> = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Set initial state
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -34,6 +36,8 @@ const Header: React.FC<HeaderProps> = () => {
   const handleNavigation = (href: string, name: string) => {
     if (name === 'Events') {
       navigate('/events');
+    } else if (name === 'Campus') {
+      navigate('/campus');
     } else if (location.pathname === '/') {
       // If on main page, scroll to section
       const element = document.querySelector(href);
@@ -49,9 +53,8 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 animate-slide-down animation-delay-200 ${
-        scrolled ? 'dashboard-glass' : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 animate-slide-down animation-delay-200 dashboard-glass"
+      style={{ position: 'fixed', top: 0, left: 0, right: 0 }}
     >
       {/* Scan Lines */}
       <div className="scan-line-top" />
@@ -121,7 +124,16 @@ const Header: React.FC<HeaderProps> = () => {
           <div className="flex items-center space-x-4">
             {/* Enhanced CTA Button */}
             <button
-              onClick={() => handleNavigation('#events', 'Events')}
+              onClick={() => {
+                const registerSection = document.querySelector('#register-section');
+                if (registerSection) {
+                  registerSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  // Fallback to events if register section not found
+                  handleNavigation('#events', 'Events');
+                }
+                setIsMenuOpen(false);
+              }}
               className="hidden lg:flex items-center px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-sm font-medium rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 hover:-translate-y-1 active:scale-95 animate-fade-in-right animation-delay-600"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -176,7 +188,15 @@ const Header: React.FC<HeaderProps> = () => {
                 
                 {/* Mobile CTA Button */}
                 <button
-                  onClick={() => handleNavigation('#events', 'Events')}
+                  onClick={() => {
+                    const registerSection = document.querySelector('#register-section');
+                    if (registerSection) {
+                      registerSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      handleNavigation('#events', 'Events');
+                    }
+                    setIsMenuOpen(false);
+                  }}
                   className="mt-4 w-full px-6 py-4 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-sm font-medium rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 active:scale-98 animate-fade-in-up animation-delay-500"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

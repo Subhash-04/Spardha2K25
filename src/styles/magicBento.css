@@ -42,8 +42,8 @@ body {
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 200, 255, 0.3);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 200, 255, 0.2);
 }
 
 .hover-glow {
@@ -191,6 +191,7 @@ html {
               transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.2s ease;
   will-change: transform, box-shadow;
+  border-color: transparent !important;
 }
 
 .ultra-liquid-glass:hover, 

@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
 
   // Memoize particle configurations to prevent recreation on every render
   const particleConfigs = useMemo(() => {
-    const stars = Array.from({ length: 200 }, (_, i) => ({
+    const stars = Array.from({ length: 100 }, (_, i) => ({
       id: `star-${i}`,
       size: Math.random() * 2 + 1,
       x: Math.random() * 100,
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
       animationDelay: Math.random() * 3
     }));
     
-    const orbs = Array.from({ length: 60 }, (_, i) => ({
+    const orbs = Array.from({ length: 30 }, (_, i) => ({
       id: `orb-${i}`,
       size: Math.random() * 4 + 3,
       x: Math.random() * 100,
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
       animationDelay: Math.random() * 2
     }));
     
-    const shootingStars = Array.from({ length: 20 }, (_, i) => ({
+    const shootingStars = Array.from({ length: 10 }, (_, i) => ({
       id: `shooting-${i}`,
       x: Math.random() * 100,
       y: Math.random() * 50,
@@ -91,6 +91,38 @@ const Hero: React.FC = () => {
         <div className="bg-orb-cyan animate-float-3d opacity-40" />
         <div className="bg-orb-blue animate-float-3d opacity-50" style={{ animationDelay: '2s' }} />
         <div className="bg-orb-purple animate-float-3d opacity-30" style={{ animationDelay: '4s' }} />
+        
+        {/* Optimized Background Particles Layer - Static positions for performance */}
+        {Array.from({ length: 40 }, (_, i) => (
+          <div
+            key={`bg-particle-${i}`}
+            className="absolute bg-blue-200 rounded-full hero-bg-particle"
+            style={{
+              width: `${1 + (i % 3)}px`,
+              height: `${1 + (i % 3)}px`,
+              left: `${(i * 17) % 100}%`,
+              top: `${(i * 23) % 100}%`,
+              animationDelay: `${(i * 0.2) % 4}s`
+            }}
+          />
+        ))}        
+        
+        {/* Slow moving background orbs - fewer for performance */}
+        {Array.from({ length: 6 }, (_, i) => (
+          <div
+            key={`bg-orb-${i}`}
+            className="absolute rounded-full hero-bg-orb"
+            style={{
+              width: `${25 + (i * 8)}px`,
+              height: `${25 + (i * 8)}px`,
+              left: `${(i * 15) % 100}%`,
+              top: `${(i * 20) % 100}%`,
+              background: `radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)`,
+              filter: 'blur(8px)',
+              animationDelay: `${i * 1}s`
+            }}
+          />
+        ))}
         
         {/* Additional space atmosphere */}
         <div 
@@ -221,7 +253,7 @@ const Hero: React.FC = () => {
         {/* Subtitle */}
         <div className="mb-8 space-y-2 animate-fade-in-up animation-delay-400">
           <p className="text-base sm:text-xl md:text-2xl text-muted-foreground font-light font-inter">
-            The Annual Techno-Cultural Fest of Vasireddy Venkatadri International Technological University
+            The Annual Techno Fest of Vasireddy Venkatadri International Technological University
           </p>
           <p className="text-base sm:text-xl md:text-2xl text-primary font-medium font-orbitron">
             Presented by ACM VVITU Student Chapter
@@ -238,8 +270,9 @@ const Hero: React.FC = () => {
               enableMagnetism={true}
               clickEffect={true}
               particleCount={6}
+              disableStars={false}
             >
-              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full">
+              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full" style={{ border: 'none', borderColor: 'transparent' }}>
                 <Calendar className="w-5 h-5 text-primary" />
                 <span className="text-foreground font-orbitron">August 22-23, 2025</span>
               </div>
@@ -252,8 +285,9 @@ const Hero: React.FC = () => {
               enableMagnetism={true}
               clickEffect={true}
               particleCount={6}
+              disableStars={false}
             >
-              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full">
+              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full" style={{ border: 'none', borderColor: 'transparent' }}>
                 <MapPin className="w-5 h-5 text-accent" />
                 <span className="text-foreground font-orbitron">VVITU Campus, Nambur, Guntur</span>
               </div>
@@ -266,8 +300,9 @@ const Hero: React.FC = () => {
               enableMagnetism={true}
               clickEffect={true}
               particleCount={6}
+              disableStars={false}
             >
-              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full">
+              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full" style={{ border: 'none', borderColor: 'transparent' }}>
                 <div className="w-5 h-5 bg-green-400 rounded-full animate-pulse" />
                 <span className="text-foreground font-orbitron">FREE Registration</span>
               </div>
@@ -275,37 +310,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-fade-in-up animation-delay-800">
-          <MagicCard
-            className="w-full sm:w-auto"
-            glowColor="0, 200, 255"
-            enableTilt={true}
-            enableMagnetism={true}
-            clickEffect={true}
-            particleCount={10}
-          >
-            <button className="dashboard-glass px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold text-foreground hover:bg-primary/10 transition-all duration-300 flex items-center gap-2 font-orbitron group w-full justify-center hover:scale-105 hover:-translate-y-1 active:scale-95">
-              Register Now
-              <div className="animate-pulse">
-                <ArrowRight className="w-5 h-5 group-hover:text-primary transition-colors" />
-              </div>
-            </button>
-          </MagicCard>
 
-          <MagicCard
-            className="w-full sm:w-auto"
-            glowColor="0, 200, 255"
-            enableTilt={true}
-            enableMagnetism={true}
-            clickEffect={true}
-            particleCount={10}
-          >
-            <button className="crystal-glass px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold text-foreground hover:bg-accent/10 border border-accent/30 font-orbitron w-full justify-center btn-enhanced hover-glow transition-smooth hover:scale-105 hover:-translate-y-1 active:scale-95">
-              Learn More
-            </button>
-          </MagicCard>
-        </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">

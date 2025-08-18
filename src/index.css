@@ -79,7 +79,7 @@ button:active, a:active {
     rgba(59, 130, 246, 0.03) 50%,
     rgba(59, 130, 246, 0.08) 100%);
   backdrop-filter: blur(60px) saturate(2) brightness(1.1);
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.15) !important;
   box-shadow: 
     0 32px 64px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(59, 130, 246, 0.4),
@@ -107,7 +107,7 @@ button:active, a:active {
     hsl(var(--glass-bg)) 100%
   );
   backdrop-filter: blur(100px) saturate(2.5) brightness(1.2) contrast(1.1);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.15) !important;
   box-shadow: 
     0 48px 96px rgba(0, 0, 0, 0.25),
     inset 0 1px 0 rgba(59, 130, 246, 0.4),
@@ -302,12 +302,25 @@ button:active, a:active {
   perspective: 1000px;
 }
 
+/* Disable 3D hover effects in Events section to prevent shaking */
+#events .card-3d:hover {
+  transform: none;
+}
+
+#events .magic-card:hover {
+  transform: none !important;
+}
+
+#events .ultra-liquid-glass:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Keep 3D effects for other sections but make them gentler */
 .card-3d:hover {
   transform: 
-    scale(1.08)
-    rotateY(8deg)
-    rotateX(5deg)
-    translateZ(50px);
+    scale(1.03)
+    rotateY(3deg)
+    rotateX(2deg);
 }
 
 /* Legend Container */
@@ -577,6 +590,106 @@ button:active, a:active {
 .magic-bento-container .card:hover::after,
 .magic-card:hover::after {
   opacity: 1;
+}
+
+/* Ensure all cards have proper transparent borders to prevent artifacts */
+.magic-card,
+[class*="card-3d"],
+.crystal-glass,
+.ultra-liquid-glass,
+.dashboard-glass {
+  border-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Remove all black borders and artifacts */
+.card--border-glow,
+.card--border-glow > *,
+.card--border-glow div {
+  border-color: transparent !important;
+  outline: none !important;
+}
+
+/* Fix crystal glass inner divs */
+.crystal-glass > div {
+  border: none !important;
+  border-color: transparent !important;
+}
+
+/* Ensure navbar is always visible with highest priority */
+header {
+  z-index: 999999 !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+/* Remove all potential black borders from card elements */
+.magic-card *,
+.crystal-glass *,
+.ultra-liquid-glass *,
+.dashboard-glass *,
+.card--border-glow * {
+  border-color: transparent !important;
+}
+
+/* Specific fix for rounded elements */
+.rounded-full,
+.rounded-xl,
+.rounded-lg,
+.rounded-2xl,
+.rounded-3xl {
+  border-color: transparent !important;
+}
+
+/* Ensure all sections have proper spacing for fixed navbar */
+section:not(#home) {
+  scroll-margin-top: 6rem;
+}
+
+/* Hero section should start from top */
+#home {
+  scroll-margin-top: 0;
+}
+
+/* Register section scroll target */
+#register-section {
+  scroll-margin-top: 6rem;
+}
+
+/* Optimized background particles for Hero section */
+@keyframes gentle-pulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slow-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(10px, -5px);
+  }
+  66% {
+    transform: translate(-5px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.hero-bg-particle {
+  animation: gentle-pulse 4s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+.hero-bg-orb {
+  animation: slow-drift 8s ease-in-out infinite;
+  will-change: transform;
 }
 
 .particle {

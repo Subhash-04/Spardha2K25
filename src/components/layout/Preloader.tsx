@@ -81,19 +81,19 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
       {/* Main Content */}
       <div className="relative flex flex-col items-center">
         {/* Preloader Container */}
-         <div className="relative w-32 h-32 mb-8">
+         <div className="relative w-40 h-40 mb-8">
            {/* Outer Circle */}
            <div className="absolute top-0 left-0 w-full h-full border-4 border-transparent border-t-blue-500 rounded-full animate-spin-slow shadow-lg shadow-blue-500/30" />
            
            {/* Middle Circle */}
-           <div className="absolute top-3 left-3 w-24 h-24 border-2 border-transparent border-t-cyan-400 rounded-full animate-spin-reverse shadow-md shadow-cyan-400/20" />
+           <div className="absolute top-4 left-4 w-32 h-32 border-2 border-transparent border-t-cyan-400 rounded-full animate-spin-reverse shadow-md shadow-cyan-400/20" />
            
            {/* Inner Circle */}
-           <div className="absolute top-6 left-6 w-20 h-20 border-2 border-transparent border-t-blue-300 rounded-full animate-spin-fast shadow-sm shadow-blue-300/10" />
+           <div className="absolute top-8 left-8 w-24 h-24 border-2 border-transparent border-t-blue-300 rounded-full animate-spin-fast shadow-sm shadow-blue-300/10" />
           
           {/* Logo Container with Glow Effect */}
            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-             <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-blue-400/30 shadow-2xl shadow-blue-500/20 flex items-center justify-center">
+             <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-blue-400/30 shadow-2xl shadow-blue-500/20 flex items-center justify-center">
                {/* Inner glow effect */}
                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/10 to-cyan-400/5 animate-pulse" />
                
@@ -101,7 +101,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
                <img
                  src={vvitLogo}
                  alt="VVITU ACM Logo"
-                 className="w-12 h-12 object-contain relative z-10 drop-shadow-lg filter brightness-110 contrast-110"
+                 className="w-16 h-16 object-contain relative z-10 drop-shadow-lg filter brightness-110 contrast-110"
                />
                
                {/* Outer glow ring */}
@@ -112,7 +112,9 @@ const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
 
         {/* Loading Text */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 animate-fade-in-up animation-delay-500">
+          <h1 className="text-4xl md:text-5xl font-bold text-gradient font-audiowide mb-2 animate-fade-in-up animation-delay-500" style={{
+            textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4)'
+          }}>
             SPARDHA 2025
           </h1>
           <p className="text-slate-300 text-base md:text-lg animate-fade-in-up animation-delay-700">

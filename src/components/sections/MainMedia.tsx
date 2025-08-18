@@ -96,6 +96,44 @@ const MainMedia: React.FC = () => {
             </motion.figure>
           </motion.section>
 
+          {/* Register Now Button Section */}
+          <motion.section
+            id="register-section"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex justify-center"
+          >
+            <motion.div variants={itemVariants}>
+              <MagicCard
+                className="relative rounded-2xl overflow-hidden"
+                glowColor="0, 200, 255"
+                enableTilt={true}
+                enableMagnetism={true}
+                clickEffect={true}
+                particleCount={20}
+              >
+                <button className="crystal-glass p-6 rounded-2xl relative group transition-all duration-300 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm animate-pulse-zoom hover:animate-none hover:scale-110 hover:shadow-[0_0_40px_rgba(0,200,255,0.8)] hover:border-blue-400/60 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-purple-500/30">
+                  <div className="absolute inset-0">
+                    <span className="crystal-facet-top opacity-20" />
+                    <span className="crystal-rotate-12s opacity-10" />
+                  </div>
+                  
+                  <div className="relative z-10 flex items-center gap-3">
+                    <span className="text-2xl font-bold text-gradient font-audiowide tracking-wider">
+                      REGISTER NOW
+                    </span>
+                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  </div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                </button>
+              </MagicCard>
+            </motion.div>
+          </motion.section>
+
           {/* Experience Spardha 2K25 Section */}
           <motion.section
             variants={containerVariants}
@@ -161,7 +199,7 @@ const MainMedia: React.FC = () => {
       </article>
 
       {/* Space Particles - Stars (Optimized) */}
-      {[...Array(140)].map((_, i) => {
+      {[...Array(70)].map((_, i) => {
         const size = Math.random() * 2 + 1;
         const blueShade = Math.random() > 0.5 ? 'bg-blue-400' : 'bg-purple-400';
         const glowIntensity = Math.random() * 0.6 + 0.3;
@@ -192,7 +230,7 @@ const MainMedia: React.FC = () => {
       })}
 
       {/* Floating Orbs (Optimized) */}
-      {[...Array(48)].map((_, i) => {
+      {[...Array(24)].map((_, i) => {
         const size = Math.random() * 4 + 3;
         const colors = ['rgba(147, 51, 234, 0.5)', 'rgba(59, 130, 246, 0.5)', 'rgba(6, 182, 212, 0.5)'];
         const color = colors[Math.floor(Math.random() * colors.length)];
@@ -226,7 +264,7 @@ const MainMedia: React.FC = () => {
       })}
 
       {/* Shooting Stars (Optimized) */}
-      {[...Array(16)].map((_, i) => (
+      {[...Array(8)].map((_, i) => (
         <motion.div
           key={`media-shooting-${i}`}
           className="absolute w-1 h-1 bg-purple-300 rounded-full"

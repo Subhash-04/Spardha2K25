@@ -34,7 +34,7 @@ const About: React.FC = () => {
   const stats = [
     { icon: Users, value: "5000+", label: "Participants", color: "text-primary" },
     { icon: Trophy, value: "4", label: "Events", color: "text-accent" },
-    { icon: Calendar, value: "2", label: "Days", color: "text-purple-400" },
+    { icon: Calendar, value: "2", label: "Days", color: "text-white" },
     { icon: Zap, value: "∞", label: "Energy", color: "text-yellow-400" },
   ];
 
@@ -42,22 +42,22 @@ const About: React.FC = () => {
     {
       title: "Technical Events",
       description: "Cutting-edge coding competitions, hackathons, and tech challenges",
-      gradient: "from-blue-400 to-blue-600",
+      gradient: "from-white to-gray-200",
     },
     {
       title: "Cultural Programs",
       description: "Dance, music, drama, and art competitions showcasing creativity",
-      gradient: "from-purple-400 to-purple-600",
+      gradient: "from-white to-gray-200",
     },
     {
       title: "Gaming Arena",
       description: "E-sports tournaments and gaming competitions for all skill levels",
-      gradient: "from-green-400 to-green-600",
+      gradient: "from-white to-gray-200",
     },
     {
-      title: "Workshops",
-      description: "Industry expert sessions on latest technologies and trends",
-      gradient: "from-orange-400 to-orange-600",
+      title: "Innovation Hub",
+      description: "Research projects, startup pitches, and technology showcases",
+      gradient: "from-white to-gray-200",
     },
   ];
 
@@ -72,7 +72,7 @@ const About: React.FC = () => {
         {[...Array(10)].map((_, i) => (
           <div
             key={`about-particle-${i}`}
-            className="absolute bg-purple-400 rounded-full animate-float opacity-10"
+            className="absolute bg-white rounded-full animate-float opacity-10"
             style={{
               width: `${1 + Math.random() * 2}px`,
               height: `${1 + Math.random() * 2}px`,
@@ -123,7 +123,7 @@ const About: React.FC = () => {
             >
               <MagicCard
                 className="crystal-glass p-6 rounded-2xl text-center relative card-3d"
-                glowColor="0, 200, 255"
+                glowColor="255, 255, 255"
                 enableTilt={true}
                 enableMagnetism={true}
                 clickEffect={true}
@@ -135,8 +135,8 @@ const About: React.FC = () => {
                 <div className="crystal-rotate-8s" />
                 
                 <div className="relative z-10">
-                  <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-4`} />
-                  <div className={`text-3xl sm:text-4xl font-bold ${stat.color} font-orbitron mb-3`}>
+                  <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-4`} style={stat.color === 'text-white' ? { filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))' } : {}} />
+                  <div className={`text-3xl sm:text-4xl font-bold ${stat.color} font-orbitron mb-3`} style={stat.color === 'text-white' ? { textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4)' } : {}}>
                     {stat.value}
                   </div>
                   <div className="text-base text-muted-foreground font-inter">{stat.label}</div>
@@ -161,7 +161,7 @@ const About: React.FC = () => {
             >
               <MagicCard
                 className="ultra-liquid-glass p-8 rounded-3xl relative card-3d"
-                glowColor="0, 200, 255"
+                glowColor="255, 255, 255"
                 enableTilt={true}
                 enableMagnetism={true}
                 clickEffect={true}
@@ -190,50 +190,6 @@ const About: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Call to Action */}
-        <motion.div
-          className="text-center mt-16"
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <MagicCard
-            className="dashboard-glass p-8 rounded-3xl max-w-2xl mx-auto relative"
-            glowColor="0, 200, 255"
-            enableTilt={false}
-            enableMagnetism={true}
-            clickEffect={true}
-            particleCount={15}
-          >
-            {/* Background Effects */}
-            <div className="absolute inset-0">
-              <div className="bg-orb-purple opacity-30" />
-              <div className="crystal-facet-center" />
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gradient font-audiowide mb-4">
-                Join the Revolution
-              </h3>
-              <p className="text-muted-foreground font-inter mb-6 leading-relaxed">
-                Be part of the most anticipated tech festival of the year. Register now and 
-                experience the future of technology and culture.
-              </p>
-              <motion.button
-                className="neu-button px-8 py-3 rounded-lg text-lg font-semibold text-primary font-orbitron"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Started
-              </motion.button>
-            </div>
-
-            {/* Scan Lines */}
-            <div className="scan-line-top" />
-            <div className="scan-line-bottom" />
-          </MagicCard>
-        </motion.div>
       </div>
 
       {/* Space Particles - Stars (Optimized) */}
@@ -268,7 +224,7 @@ const About: React.FC = () => {
       })}
 
       {/* Floating Orbs */}
-      {[...Array(120)].map((_, i) => {
+      {[...Array(60)].map((_, i) => {
         const size = Math.random() * 4 + 3;
         const colors = ['rgba(6, 182, 212, 0.5)', 'rgba(59, 130, 246, 0.5)', 'rgba(147, 197, 253, 0.5)'];
         const color = colors[Math.floor(Math.random() * colors.length)];
@@ -302,7 +258,7 @@ const About: React.FC = () => {
       })}
 
       {/* Shooting Stars */}
-      {[...Array(40)].map((_, i) => (
+      {[...Array(20)].map((_, i) => (
         <motion.div
           key={`about-shooting-${i}`}
           className="absolute w-1 h-1 bg-cyan-300 rounded-full"

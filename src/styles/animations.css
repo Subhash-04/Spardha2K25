@@ -426,6 +426,20 @@
 .duration-600 { transition-duration: 600ms; }
 .duration-400 { transition-duration: 400ms; }
 
+/* Pulse Zoom Animation */
+@keyframes pulse-zoom {
+  0%, 100% { 
+    transform: scale(1);
+  }
+  50% { 
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-zoom {
+  animation: pulse-zoom 2s ease-in-out infinite;
+}
+
 /* Hover effects */
 .hover\:rotate-360:hover { transform: rotate(360deg); }
 .hover\:text-shadow-glow:hover { text-shadow: 0 0 8px rgba(0, 200, 255, 0.8); }

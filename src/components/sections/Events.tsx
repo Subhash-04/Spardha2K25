@@ -305,20 +305,20 @@ const Events: React.FC = () => {
                 variants={cardVariants}
               >
                 <MagicCard 
-                  className="ultra-liquid-glass rounded-3xl relative overflow-hidden min-h-[600px] lg:min-h-[700px] flex flex-col hover-lift transition-smooth"
+                  className="ultra-liquid-glass rounded-3xl relative overflow-hidden min-h-[400px] lg:min-h-[450px] flex flex-col transition-smooth hover:scale-105 hover:shadow-[0_0_40px_rgba(0,200,255,0.6)] hover:border-blue-400/50"
                   glowColor="0, 200, 255"
-                  enableTilt={false}
+                  enableTilt={true}
                   enableMagnetism={true}
                   clickEffect={true}
-                  particleCount={12}
+                  particleCount={15}
                 >
                   <div className="relative flex flex-col h-full">
                     {/* Event Poster Image - Portrait orientation with more space */}
-                    <div className="w-full h-96 sm:h-[420px] lg:h-[480px] relative rounded-t-3xl overflow-hidden flex-shrink-0">
+                    <div className="w-full h-64 sm:h-[280px] lg:h-[320px] relative rounded-t-3xl overflow-hidden flex-shrink-0">
                       <img 
                         src={event.poster} 
                         alt={event.title}
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
                     </div>
@@ -532,55 +532,11 @@ const Events: React.FC = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* Event Statistics */}
-        <motion.div
-          className="mt-16 text-center"
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <MagicCard
-            className="dashboard-glass p-8 rounded-3xl max-w-4xl mx-auto relative"
-            glowColor="0, 200, 255"
-            enableTilt={false}
-            enableMagnetism={true}
-            clickEffect={true}
-            particleCount={15}
-          >
-            <div className="absolute inset-0">
-              <div className="bg-orb-cyan opacity-20" />
-              <div className="crystal-facet-center" />
-            </div>
 
-            <div className="relative z-10">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gradient font-audiowide mb-6">
-                Event Highlights
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[
-                  { label: "Total Events", value: "25+", color: "text-primary" },
-                  { label: "Workshops", value: "10+", color: "text-purple-400" },
-                  { label: "Speakers", value: "15+", color: "text-yellow-400" },
-                ].map((stat, index) => (
-                  <div key={stat.label} className="text-center">
-                    <div className={`text-2xl sm:text-3xl font-bold ${stat.color} font-orbitron mb-2`}>
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-muted-foreground font-inter">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="scan-line-top" />
-            <div className="scan-line-bottom" />
-          </MagicCard>
-        </motion.div>
       </div>
 
       {/* Space Particles - Stars (Optimized) */}
-      {[...Array(200)].map((_, i) => {
+      {[...Array(100)].map((_, i) => {
         const size = Math.random() * 2 + 1;
         const blueShade = Math.random() > 0.5 ? 'bg-blue-400' : 'bg-cyan-400';
         const glowIntensity = Math.random() * 0.6 + 0.3;
@@ -611,7 +567,7 @@ const Events: React.FC = () => {
       })}
 
       {/* Floating Orbs */}
-      {[...Array(72)].map((_, i) => {
+      {[...Array(36)].map((_, i) => {
         const size = Math.random() * 4 + 3;
         const colors = ['rgba(59, 130, 246, 0.5)', 'rgba(6, 182, 212, 0.5)', 'rgba(147, 197, 253, 0.5)'];
         const color = colors[Math.floor(Math.random() * colors.length)];

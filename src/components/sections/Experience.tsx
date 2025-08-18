@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import MagicCard from '../ui/MagicCard';
 
@@ -6,6 +6,8 @@ import MagicCard from '../ui/MagicCard';
 import mainVideo from '../../assets/videos/main.mp4'; // Temporarily disabled for optimization
 
 const Experience: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -21,6 +23,44 @@ const Experience: React.FC = () => {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
   };
+  
+  useEffect(() => {
+    const handleVideoPlay = async () => {
+      if (videoRef.current) {
+        try {
+          // Try to play with sound first
+          await videoRef.current.play();
+        } catch (error) {
+          // If failed (likely due to autoplay policy), mute and try again
+          console.log('Autoplay with sound failed, falling back to muted autoplay');
+          videoRef.current.muted = true;
+          try {
+            await videoRef.current.play();
+          } catch (mutedError) {
+            console.log('Muted autoplay also failed:', mutedError);
+          }
+        }
+      }
+    };
+    
+    // Use intersection observer to play video when section is visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && videoRef.current) {
+            handleVideoPlay();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
@@ -46,7 +86,7 @@ const Experience: React.FC = () => {
             </motion.h2>
           </motion.div>
           <motion.div variants={itemVariants} className="mb-8">
-            <motion.p className="text-2xl sm:text-3xl md:text-4xl font-bold text-holographic font-audiowide">
+            <motion.p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-audiowide" style={{textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4)'}}>
               SPARDHA 2K25
             </motion.p>
           </motion.div>
@@ -79,11 +119,13 @@ const Experience: React.FC = () => {
               {/* Video Container */}
               <div className="relative aspect-video">
                 <video
+                  ref={videoRef}
                   className="w-full h-full object-cover"
                   controls
+                  loop
                   preload="metadata"
-                  muted={false}
                   controlsList="nodownload"
+                  playsInline
                 >
                   <source src={mainVideo} type="video/mp4" />
                   Your browser does not support the video tag.
@@ -101,67 +143,7 @@ const Experience: React.FC = () => {
           </MagicCard>
         </motion.div>
 
-        {/* Feature Highlights */}
-        <motion.div
-          className="grid md:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {[
-            {
-              title: "Immersive Tech",
-              description: "Experience cutting-edge technology and innovation",
-              color: "text-primary",
-              gradient: "from-blue-400 to-blue-600"
-            },
-            {
-              title: "Cultural Fusion",
-              description: "Where technology meets art and creativity",
-              color: "text-purple-400",
-              gradient: "from-purple-400 to-purple-600"
-            },
-            {
-              title: "Future Vision",
-              description: "Step into the Tech world of tomorrow",
-              color: "text-accent",
-              gradient: "from-cyan-400 to-cyan-600"
-            }
-          ].map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              variants={itemVariants}
-            >
-              <MagicCard
-                className="h-full"
-                glowColor="0, 200, 255"
-                enableTilt={false}
-                enableMagnetism={true}
-                clickEffect={true}
-                particleCount={8}
-              >
-                <div className="crystal-glass p-6 rounded-2xl h-full relative overflow-hidden group hover:bg-white/5 transition-all duration-300">
-                  {/* Background gradient */}
-                  <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl ${feature.gradient} opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity duration-300`} />
 
-                  <div className="relative z-10">
-                    <h3 className={`text-xl font-bold ${feature.color} font-audiowide mb-3`}>
-                      {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground font-inter leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-
-                  {/* Crystal effects */}
-                  <div className="crystal-facet-corner opacity-20" />
-                  <div className="scan-line-top" />
-                </div>
-              </MagicCard>
-            </motion.div>
-          ))}
-        </motion.div>
 
         {/* Call to Action */}
         <motion.div
@@ -217,7 +199,7 @@ const Experience: React.FC = () => {
       </div>
 
       {/* Space Particles - Stars (Optimized) */}
-      {[...Array(240)].map((_, i) => {
+      {[...Array(120)].map((_, i) => {
         const size = Math.random() * 2 + 1;
         const blueShade = Math.random() > 0.5 ? 'bg-blue-400' : 'bg-purple-400';
         const glowIntensity = Math.random() * 0.6 + 0.3;
@@ -253,7 +235,7 @@ const Experience: React.FC = () => {
       })}
 
       {/* Floating Orbs */}
-      {[...Array(80)].map((_, i) => {
+      {[...Array(40)].map((_, i) => {
         const size = Math.random() * 4 + 3;
         const colors = ['rgba(147, 51, 234, 0.5)', 'rgba(59, 130, 246, 0.5)', 'rgba(168, 85, 247, 0.5)'];
         const color = colors[Math.floor(Math.random() * colors.length)];
@@ -287,7 +269,7 @@ const Experience: React.FC = () => {
       })}
 
       {/* Shooting Stars */}
-      {[...Array(32)].map((_, i) => (
+      {[...Array(16)].map((_, i) => (
         <motion.div
           key={`exp-shooting-${i}`}
           className="absolute w-1 h-1 bg-purple-300 rounded-full"
@@ -312,7 +294,7 @@ const Experience: React.FC = () => {
       ))}
 
       {/* Nebula Particles */}
-      {[...Array(48)].map((_, i) => (
+      {[...Array(24)].map((_, i) => (
         <motion.div
           key={`exp-nebula-${i}`}
           className="absolute rounded-full opacity-15"
