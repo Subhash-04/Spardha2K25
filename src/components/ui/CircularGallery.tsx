@@ -431,6 +431,7 @@ class App {
   isDown: boolean = false;
   start: number = 0;
   startTime: number = 0;
+  lastScrollTime: number = 0;
 
   constructor(
     container: HTMLElement,
@@ -616,9 +617,16 @@ class App {
   }
 
   onWheel(e: Event) {
+    e.preventDefault();
     const wheelEvent = e as WheelEvent;
     const delta = wheelEvent.deltaY || (wheelEvent as any).wheelDelta || (wheelEvent as any).detail;
-    this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.5; // Increased sensitivity
+    
+    // Throttle scroll events for better performance
+    const now = Date.now();
+    if (now - this.lastScrollTime < 16) return; // Limit to 60fps
+    this.lastScrollTime = now;
+    
+    this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.3; // Reduced sensitivity for smoother scrolling
     this.onCheckDebounce();
   }
 

@@ -431,10 +431,10 @@ const Events: React.FC = () => {
                       bend={isMobile ? 1.5 : 3} 
                       textColor="#ffffff" 
                       borderRadius={0.05} 
-                      scrollEase={isMobile ? 0.05 : 0.02}
+                      scrollEase={isMobile ? 0.08 : 0.05}
                       autoRotate={true}
-                      autoRotateSpeed={isMobile ? 0.5 : 0.8}
-                      scrollSpeed={isMobile ? 2 : 3}
+                      autoRotateSpeed={isMobile ? 0.3 : 0.5}
+                      scrollSpeed={isMobile ? 1.5 : 2}
                       font={isMobile ? "bold 20px Figtree" : "bold 30px Figtree"}
                     />
                   </Suspense>
