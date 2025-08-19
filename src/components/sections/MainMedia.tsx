@@ -136,6 +136,7 @@ const MainMedia: React.FC = () => {
 
           {/* Experience Spardha 2K25 Section */}
           <motion.section
+            id="main-video-section"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

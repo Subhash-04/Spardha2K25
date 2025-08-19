@@ -34,8 +34,8 @@ const About: React.FC = () => {
   const stats = [
     { icon: Users, value: "5000+", label: "Participants", color: "text-primary" },
     { icon: Trophy, value: "4", label: "Events", color: "text-accent" },
-    { icon: Calendar, value: "2", label: "Days", color: "text-white" },
-    { icon: Zap, value: "∞", label: "Energy", color: "text-yellow-400" },
+    { icon: Calendar, value: "2", label: "Days", color: "text-primary" },
+    { icon: Zap, value: "∞", label: "Energy", color: "text-accent" },
   ];
 
   const features = [

@@ -128,8 +128,8 @@ const Header: React.FC<HeaderProps> = () => {
           </nav>
 
           {/* Right Side Controls */}
-          <div className="flex items-center space-x-4">
-            {/* Enhanced CTA Button */}
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            {/* Enhanced CTA Button - Desktop */}
             <button
               onClick={() => {
                 const registerSection = document.querySelector('#register-section');
@@ -148,6 +148,23 @@ const Header: React.FC<HeaderProps> = () => {
               <div
                 className="ml-2 w-1 h-1 bg-white rounded-full animate-pulse-scale"
               />
+            </button>
+
+            {/* Mobile Register Button */}
+            <button
+              onClick={() => {
+                const registerSection = document.querySelector('#register-section');
+                if (registerSection) {
+                  registerSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  handleNavigation('#events', 'Events');
+                }
+                setIsMenuOpen(false);
+              }}
+              className="lg:hidden flex items-center px-3 py-2 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-xs font-medium rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 active:scale-95"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 tracking-wide">Register</span>
             </button>
 
             {/* Mobile Menu Button */}

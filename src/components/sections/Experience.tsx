@@ -186,6 +186,12 @@ const Experience: React.FC = () => {
                   className="crystal-glass px-8 py-3 rounded-xl text-lg font-semibold text-foreground border border-accent/30 font-orbitron"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const videoSection = document.querySelector('#main-video-section');
+                    if (videoSection) {
+                      videoSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   Watch Full Video
                 </motion.button>

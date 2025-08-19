@@ -293,7 +293,7 @@ const Events: React.FC = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedDay}
-            className="grid md:grid-cols-2 gap-6 lg:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -305,22 +305,33 @@ const Events: React.FC = () => {
                 variants={cardVariants}
               >
                 <MagicCard 
-                  className="ultra-liquid-glass rounded-3xl relative overflow-hidden min-h-[320px] lg:min-h-[360px] flex flex-col transition-smooth hover:scale-105 hover:shadow-[0_0_40px_rgba(0,200,255,0.6)] hover:border-blue-400/50"
+                  className="ultra-liquid-glass magic-card-enhanced rounded-3xl relative overflow-hidden min-h-[520px] lg:min-h-[560px] flex flex-col transition-smooth hover:scale-105 hover:shadow-[0_0_40px_rgba(0,200,255,0.6)] hover:border-blue-400/50"
                   glowColor="0, 200, 255"
                   enableTilt={true}
                   enableMagnetism={true}
                   clickEffect={true}
-                  particleCount={15}
+                  particleCount={0}
+                  disableStars={true}
                 >
                   <div className="relative flex flex-col h-full">
-                    {/* Event Poster Image - Portrait orientation with more space */}
-                    <div className="w-full h-48 sm:h-[200px] lg:h-[220px] relative rounded-t-3xl overflow-hidden flex-shrink-0">
+                    {/* Enhanced Visual Effects */}
+                    <div className="absolute inset-0 opacity-30">
+                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"></div>
+                      <div className="absolute bottom-0 right-0 w-1 h-full bg-gradient-to-t from-transparent via-blue-400 to-transparent animate-pulse delay-1000"></div>
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-radial from-cyan-400/20 to-transparent rounded-full animate-ping"></div>
+                    </div>
+                    
+                    {/* Event Poster Image - Larger size */}
+                    <div className="w-full h-64 sm:h-[280px] lg:h-[320px] relative rounded-t-3xl overflow-hidden flex-shrink-0">
                       <img 
                         src={event.poster} 
                         alt={event.title}
                         className="w-full h-full object-contain object-center transition-transform duration-500 hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
+                      {/* Geometric overlay effects */}
+                      <div className="absolute top-4 right-4 w-8 h-8 border-2 border-cyan-400/50 rotate-45 animate-spin-slow"></div>
+                      <div className="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-full animate-bounce"></div>
                     </div>
                     
                     {/* Content section pushed to bottom */}
