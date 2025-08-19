@@ -305,7 +305,7 @@ const Events: React.FC = () => {
                 variants={cardVariants}
               >
                 <MagicCard 
-                  className="ultra-liquid-glass rounded-3xl relative overflow-hidden min-h-[400px] lg:min-h-[450px] flex flex-col transition-smooth hover:scale-105 hover:shadow-[0_0_40px_rgba(0,200,255,0.6)] hover:border-blue-400/50"
+                  className="ultra-liquid-glass rounded-3xl relative overflow-hidden min-h-[320px] lg:min-h-[360px] flex flex-col transition-smooth hover:scale-105 hover:shadow-[0_0_40px_rgba(0,200,255,0.6)] hover:border-blue-400/50"
                   glowColor="0, 200, 255"
                   enableTilt={true}
                   enableMagnetism={true}
@@ -314,7 +314,7 @@ const Events: React.FC = () => {
                 >
                   <div className="relative flex flex-col h-full">
                     {/* Event Poster Image - Portrait orientation with more space */}
-                    <div className="w-full h-64 sm:h-[280px] lg:h-[320px] relative rounded-t-3xl overflow-hidden flex-shrink-0">
+                    <div className="w-full h-48 sm:h-[200px] lg:h-[220px] relative rounded-t-3xl overflow-hidden flex-shrink-0">
                       <img 
                         src={event.poster} 
                         alt={event.title}

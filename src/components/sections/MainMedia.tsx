@@ -114,7 +114,7 @@ const MainMedia: React.FC = () => {
                 clickEffect={true}
                 particleCount={8}
               >
-                <button className="crystal-glass p-6 rounded-2xl relative group transition-all duration-300 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm animate-pulse-zoom hover:animate-none hover:scale-110 hover:shadow-[0_0_40px_rgba(0,200,255,0.8)] hover:border-blue-400/60 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-purple-500/30">
+                <button className="crystal-glass p-6 rounded-2xl relative group transition-all duration-300 backdrop-blur-sm animate-pulse-zoom hover:animate-none hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] border border-white/20 hover:border-white/40">
                   <div className="absolute inset-0">
                     <span className="crystal-facet-top opacity-20" />
                     <span className="crystal-rotate-12s opacity-10" />
@@ -128,7 +128,7 @@ const MainMedia: React.FC = () => {
                   </div>
                   
                   {/* Hover effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                 </button>
               </MagicCard>
             </motion.div>

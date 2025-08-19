@@ -373,8 +373,9 @@ class Media {
     const isMobile = this.screen.width <= 768;
     this.scale = isMobile ? this.screen.height / 800 : this.screen.height / 1500;
     
-    const baseWidth = isMobile ? 400 : 700;
-    const baseHeight = isMobile ? 500 : 900;
+    // Use more square aspect ratio for better poster visibility
+    const baseWidth = isMobile ? 450 : 750;
+    const baseHeight = isMobile ? 450 : 750;
     
     this.plane.scale.y = (this.viewport.height * (baseHeight * this.scale)) / this.screen.height;
     this.plane.scale.x = (this.viewport.width * (baseWidth * this.scale)) / this.screen.width;
