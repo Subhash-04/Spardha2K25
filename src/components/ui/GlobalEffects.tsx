@@ -10,8 +10,8 @@ const GlobalEffects: React.FC = () => {
     spotlight.className = 'global-spotlight';
     spotlight.style.cssText = `
       position: fixed;
-      width: 800px;
-      height: 800px;
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
       pointer-events: none;
       z-index: 2000;

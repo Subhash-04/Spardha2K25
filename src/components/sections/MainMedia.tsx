@@ -112,7 +112,7 @@ const MainMedia: React.FC = () => {
                 enableTilt={true}
                 enableMagnetism={true}
                 clickEffect={true}
-                particleCount={20}
+                particleCount={8}
               >
                 <button className="crystal-glass p-6 rounded-2xl relative group transition-all duration-300 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm animate-pulse-zoom hover:animate-none hover:scale-110 hover:shadow-[0_0_40px_rgba(0,200,255,0.8)] hover:border-blue-400/60 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-purple-500/30">
                   <div className="absolute inset-0">

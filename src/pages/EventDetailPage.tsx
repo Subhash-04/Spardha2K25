@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Users, Clock, MapPin, ExternalLink, CheckCircle } from 'lucide-react';
@@ -199,6 +199,11 @@ const EventDetailPage: React.FC = () => {
   
   const event = eventData[eventId || ''];
   
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [eventId]);
+  
   // Handle back navigation with proper state management
   const handleBackNavigation = () => {
     // Navigate to events page to prevent app reload
@@ -393,14 +398,10 @@ const EventDetailPage: React.FC = () => {
               </MagicCard>
 
               {/* Action Buttons */}
-              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-                <button className="flex-1 crystal-glass px-8 py-4 rounded-2xl text-primary font-orbitron font-bold hover:bg-primary/10 shadow-glow flex items-center justify-center gap-3 btn-enhanced hover-glow transition-smooth">
+              <motion.div variants={itemVariants} className="flex justify-center">
+                <button className="crystal-glass px-8 py-4 rounded-2xl text-primary font-orbitron font-bold hover:bg-primary/10 shadow-glow flex items-center justify-center gap-3 btn-enhanced hover-glow transition-smooth">
                   <ExternalLink className="w-5 h-5" />
                   Register Now
-                </button>
-                <button className="flex-1 dashboard-glass px-8 py-4 rounded-2xl text-muted-foreground font-orbitron hover:text-primary flex items-center justify-center gap-3 btn-enhanced transition-smooth">
-                  <MapPin className="w-5 h-5" />
-                  View Venue
                 </button>
               </motion.div>
             </motion.div>

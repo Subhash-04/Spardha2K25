@@ -318,7 +318,7 @@ const Events: React.FC = () => {
                       <img 
                         src={event.poster} 
                         alt={event.title}
-                        className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
+                        className="w-full h-full object-contain object-center transition-transform duration-500 hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
                     </div>
