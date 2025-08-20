@@ -150,7 +150,22 @@ const Header: React.FC<HeaderProps> = () => {
               />
             </button>
 
-
+            {/* Mobile Register Button */}
+            <button
+              onClick={() => {
+                const registerSection = document.querySelector('#register-section');
+                if (registerSection) {
+                  registerSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  handleNavigation('#events', 'Events');
+                }
+                setIsMenuOpen(false);
+              }}
+              className="lg:hidden flex items-center px-3 py-2 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-xs font-medium rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 active:scale-95"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 tracking-wide">Register</span>
+            </button>
 
             {/* Mobile Menu Button */}
             <button
