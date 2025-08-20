@@ -272,7 +272,7 @@ const Hero: React.FC = () => {
               particleCount={6}
               disableStars={false}
             >
-              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full" style={{ border: 'none', borderColor: 'transparent' }}>
+              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full hero-card-fix">
                 <Calendar className="w-5 h-5 text-primary" />
                 <span className="text-foreground font-orbitron">August 22-23, 2025</span>
               </div>
@@ -287,7 +287,7 @@ const Hero: React.FC = () => {
               particleCount={6}
               disableStars={false}
             >
-              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full" style={{ border: 'none', borderColor: 'transparent' }}>
+              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full hero-card-fix">
                 <MapPin className="w-5 h-5 text-accent" />
                 <span className="text-foreground font-orbitron">VVITU Campus, Nambur, Guntur</span>
               </div>
@@ -302,7 +302,7 @@ const Hero: React.FC = () => {
               particleCount={6}
               disableStars={false}
             >
-              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full" style={{ border: 'none', borderColor: 'transparent' }}>
+              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full hero-card-fix">
                 <div className="w-5 h-5 bg-green-400 rounded-full animate-pulse" />
                 <span className="text-foreground font-orbitron">FREE Registration</span>
               </div>

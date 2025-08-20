@@ -175,13 +175,7 @@ const Experience: React.FC = () => {
                 experience and create memories that will last a lifetime.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button
-                  className="neu-button px-8 py-3 rounded-xl text-lg font-semibold text-primary font-orbitron"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Register Now
-                </motion.button>
+              
                 <motion.button
                   className="crystal-glass px-8 py-3 rounded-xl text-lg font-semibold text-foreground border border-accent/30 font-orbitron"
                   whileHover={{ scale: 1.05, y: -2 }}

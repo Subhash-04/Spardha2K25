@@ -335,9 +335,47 @@
 .magic-card-enhanced {
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .magic-card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, 
+    rgba(0, 200, 255, 0.4) 0%, 
+    rgba(138, 43, 226, 0.4) 25%, 
+    rgba(0, 255, 100, 0.4) 50%, 
+    rgba(255, 20, 147, 0.4) 75%, 
+    rgba(0, 200, 255, 0.4) 100%);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.magic-card-enhanced:hover {
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.5), 0 0 60px rgba(0, 200, 255, 0.3), 0 0 90px rgba(0, 200, 255, 0.1);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.magic-card-enhanced:hover::before {
+  opacity: 1;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
+/* Main event cards special highlighting */
+.main-event-highlight {
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-event-highlight::before {
   content: '';
   position: absolute;
   top: -2px;
@@ -345,28 +383,81 @@
   right: -2px;
   bottom: -2px;
   background: linear-gradient(45deg, 
-    rgba(0, 200, 255, 0.3) 0%, 
-    rgba(138, 43, 226, 0.3) 25%, 
-    rgba(0, 255, 100, 0.3) 50%, 
-    rgba(255, 20, 147, 0.3) 75%, 
-    rgba(0, 200, 255, 0.3) 100%);
+    rgba(255, 255, 255, 0.3) 0%, 
+    rgba(0, 200, 255, 0.3) 25%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(0, 200, 255, 0.3) 75%, 
+    rgba(255, 255, 255, 0.3) 100%);
   border-radius: inherit;
   z-index: -1;
-  animation: gradient-shift 4s ease-in-out infinite;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
-.magic-card-enhanced:hover::before {
+.main-event-highlight:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 255, 255, 0.8),
+    0 0 60px rgba(255, 255, 255, 0.6),
+    0 0 90px rgba(255, 255, 255, 0.4),
+    0 0 120px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-8px) scale(1.03);
+}
+
+.main-event-highlight:hover::before {
   opacity: 1;
+  animation: gradient-shift 2s ease-in-out infinite;
+}
+
+/* Add text glow effect like in Experience section */
+.main-event-highlight .event-title {
+  transition: text-shadow 0.3s ease;
+}
+
+.main-event-highlight:hover .event-title {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6);
+}
+
+/* Enhanced hover effects for main event cards */
+.main-event-highlight:hover .event-poster {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.main-event-highlight .event-poster {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hero section card fixes */
+.hero-card-fix {
+  border: none !important;
+  border-color: transparent !important;
+  border-radius: 9999px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 
+    0 0 20px rgba(0, 200, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+@keyframes main-event-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  }
 }
 
 @keyframes gradient-shift {
-  0%, 100% {
+  0% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

@@ -305,7 +305,7 @@ const Events: React.FC = () => {
                 variants={cardVariants}
               >
                 <MagicCard 
-                  className="ultra-liquid-glass magic-card-enhanced rounded-3xl relative overflow-hidden min-h-[520px] lg:min-h-[560px] flex flex-col transition-smooth hover:scale-105 hover:shadow-[0_0_40px_rgba(0,200,255,0.6)] hover:border-blue-400/50"
+                  className="ultra-liquid-glass magic-card-enhanced main-event-highlight rounded-3xl relative overflow-hidden min-h-[520px] lg:min-h-[560px] flex flex-col transition-smooth"
                   glowColor="0, 200, 255"
                   enableTilt={true}
                   enableMagnetism={true}
@@ -326,7 +326,7 @@ const Events: React.FC = () => {
                       <img 
                         src={event.poster} 
                         alt={event.title}
-                        className="w-full h-full object-contain object-center transition-transform duration-500 hover:scale-110"
+                        className="w-full h-full object-contain object-center transition-transform duration-500 hover:scale-110 event-poster"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
                       {/* Geometric overlay effects */}
@@ -347,7 +347,7 @@ const Events: React.FC = () => {
                               <event.icon className="w-6 h-6 text-white" />
                             </div>
                             <div>
-                              <h3 className="text-lg sm:text-xl font-bold text-holographic font-audiowide">
+                              <h3 className="text-lg sm:text-xl font-bold text-holographic font-audiowide event-title">
                                 {event.title}
                               </h3>
                               <div className="text-sm text-muted-foreground font-orbitron">
