@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { Code, Palette, Wrench, Terminal, Users, Brain, FileText } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import LazyImage from '../ui/LazyImage';
-
 import blindPoster from '../../assets/images/blind.jpg';
 import paperPoster from '../../assets/images/paper.jpg';
 import traditionalPoster from '../../assets/images/Traditional.jpg';
@@ -515,7 +514,7 @@ const Events: React.FC = () => {
                             <LazyImage
                               src={event.image}
                               alt={event.title}
-                              className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover border-2 border-blue-400/30"
+                              className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg border-2 border-blue-400/30"
                             />
                           </div>
                           

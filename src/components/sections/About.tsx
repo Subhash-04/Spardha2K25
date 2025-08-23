@@ -40,23 +40,23 @@ const About: React.FC = () => {
 
   const features = [
     {
-      title: "Technical Events",
-      description: "Cutting-edge coding competitions, hackathons, and tech challenges",
+      title: "Problem Solving Mastery",
+      description: "Develop algorithmic thinking and coding expertise through CodeVerse challenges",
       gradient: "from-white to-gray-200",
     },
     {
-      title: "Cultural Programs",
-      description: "Dance, music, drama, and art competitions showcasing creativity",
+      title: "Team Collaboration",
+      description: "Master synchronized teamwork and communication skills via Blind Sync",
       gradient: "from-white to-gray-200",
     },
     {
-      title: "Gaming Arena",
-      description: "E-sports tournaments and gaming competitions for all skill levels",
+      title: "AI Innovation Skills",
+      description: "Learn prompt engineering and AI interaction through Prompt Realm",
       gradient: "from-white to-gray-200",
     },
     {
-      title: "Innovation Hub",
-      description: "Research projects, startup pitches, and technology showcases",
+      title: "Research & Presentation",
+      description: "Build technical research and presentation abilities with Tech Thesis",
       gradient: "from-white to-gray-200",
     },
   ];
@@ -103,8 +103,9 @@ const About: React.FC = () => {
             variants={itemVariants}
             className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto font-inter leading-relaxed"
           >
-            Spardha 2025 is the flagship techno-cultural festival of VVIT, where innovation meets creativity. 
-            Experience a Tech-themed celebration of technology, culture, and human potential.
+            Spardha 2025 at VVIT University - A journey through the multiverse of technology and imagination, where
+            every idea shapes a new reality. Step into a dimension where innovation meets infinite possibilities
+            and creativity knows no bounds.
           </motion.p>
         </motion.div>
 
