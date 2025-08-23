@@ -129,43 +129,47 @@ const Header: React.FC<HeaderProps> = () => {
 
           {/* Right Side Controls */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            {/* Enhanced CTA Button - Desktop */}
-            <button
-              onClick={() => {
-                const registerSection = document.querySelector('#register-section');
-                if (registerSection) {
-                  registerSection.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  // Fallback to events if register section not found
-                  handleNavigation('#events', 'Events');
-                }
-                setIsMenuOpen(false);
-              }}
-              className="hidden lg:flex items-center px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-sm font-medium rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 hover:-translate-y-1 active:scale-95 animate-fade-in-right animation-delay-600"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 tracking-wide">Register Now</span>
-              <div
-                className="ml-2 w-1 h-1 bg-white rounded-full animate-pulse-scale"
-              />
-            </button>
+            {/* Enhanced CTA Button - Desktop - Hidden on Events and Campus pages */}
+            {location.pathname !== '/events' && location.pathname !== '/campus' && (
+              <button
+                onClick={() => {
+                  const registerSection = document.querySelector('#register-section');
+                  if (registerSection) {
+                    registerSection.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    // Fallback to events if register section not found
+                    handleNavigation('#events', 'Events');
+                  }
+                  setIsMenuOpen(false);
+                }}
+                className="hidden lg:flex items-center px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-sm font-medium rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 hover:-translate-y-1 active:scale-95 animate-fade-in-right animation-delay-600"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative z-10 tracking-wide">Register Now</span>
+                <div
+                  className="ml-2 w-1 h-1 bg-white rounded-full animate-pulse-scale"
+                />
+              </button>
+            )}
 
-            {/* Mobile Register Button */}
-            <button
-              onClick={() => {
-                const registerSection = document.querySelector('#register-section');
-                if (registerSection) {
-                  registerSection.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  handleNavigation('#events', 'Events');
-                }
-                setIsMenuOpen(false);
-              }}
-              className="lg:hidden flex items-center px-3 py-2 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-xs font-medium rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 active:scale-95"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 tracking-wide">Register</span>
-            </button>
+            {/* Mobile Register Button - Hidden on Events and Campus pages */}
+            {location.pathname !== '/events' && location.pathname !== '/campus' && (
+              <button
+                onClick={() => {
+                  const registerSection = document.querySelector('#register-section');
+                  if (registerSection) {
+                    registerSection.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    handleNavigation('#events', 'Events');
+                  }
+                  setIsMenuOpen(false);
+                }}
+                className="lg:hidden flex items-center px-3 py-2 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-xs font-medium rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 active:scale-95"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative z-10 tracking-wide">Register</span>
+              </button>
+            )}
 
             {/* Mobile Menu Button */}
             <button
@@ -210,22 +214,24 @@ const Header: React.FC<HeaderProps> = () => {
                   </button>
                 ))}
                 
-                {/* Mobile CTA Button */}
-                <button
-                  onClick={() => {
-                    const registerSection = document.querySelector('#register-section');
-                    if (registerSection) {
-                      registerSection.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                      handleNavigation('#events', 'Events');
-                    }
-                    setIsMenuOpen(false);
-                  }}
-                  className="mt-4 w-full px-6 py-4 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-sm font-medium rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 active:scale-98 animate-fade-in-up animation-delay-500"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative z-10 tracking-wide">Register for Events</span>
-                </button>
+                {/* Mobile CTA Button - Hidden on Events and Campus pages */}
+                {location.pathname !== '/events' && location.pathname !== '/campus' && (
+                  <button
+                    onClick={() => {
+                      const registerSection = document.querySelector('#register-section');
+                      if (registerSection) {
+                        registerSection.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        handleNavigation('#events', 'Events');
+                      }
+                      setIsMenuOpen(false);
+                    }}
+                    className="mt-4 w-full px-6 py-4 bg-gradient-to-r from-primary to-accent text-white font-orbitron text-sm font-medium rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group overflow-hidden relative hover:scale-105 active:scale-98 animate-fade-in-up animation-delay-500"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative z-10 tracking-wide">Register for Events</span>
+                  </button>
+                )}
               </nav>
             </div>
           </div>
