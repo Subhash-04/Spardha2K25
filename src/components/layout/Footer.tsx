@@ -1,15 +1,13 @@
 import React from 'react';
-import { Github, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { Instagram, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import vvituLogo from '../../assets/images/vvituacm_logo.png';
 
 const Footer: React.FC = () => {
 
   const socialLinks = [
-    { icon: Github, name: 'Github', link: '#', color: 'text-white' },
-    { icon: Twitter, name: 'Twitter', link: '#', color: 'text-sky-400' },
-    { icon: Instagram, name: 'Instagram', link: '#', color: 'text-pink-500' },
-    { icon: Linkedin, name: 'LinkedIn', link: '#', color: 'text-blue-500' },
+    { icon: Instagram, name: 'Instagram', link: 'https://www.instagram.com/acm_vvitu?igsh=MXRzOXd0cWRrcGY5Yw==', color: 'text-pink-500' },
+    { icon: Linkedin, name: 'LinkedIn', link: 'https://www.linkedin.com/in/acmvvit/', color: 'text-blue-500' },
   ];
 
   const quickLinks = [

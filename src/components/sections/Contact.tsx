@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Globe, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Instagram, Linkedin } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 
 const Contact: React.FC = () => {
@@ -59,18 +59,16 @@ const Contact: React.FC = () => {
     {
       icon: Instagram,
       title: 'Instagram',
-      info: '@spardha2025',
-      link: 'https://instagram.com/spardha2025',
+      info: '@acm_vvitu',
+      link: 'https://www.instagram.com/acm_vvitu?igsh=MXRzOXd0cWRrcGY5Yw==',
       gradient: 'from-pink-500 to-orange-600',
       bgColor: 'bg-gradient-to-r from-pink-500 to-orange-600',
     },
    ];
 
   const socialLinks = [
-    { icon: Facebook, name: 'Facebook', link: '#', color: 'text-blue-500' },
-    { icon: Twitter, name: 'Twitter', link: '#', color: 'text-sky-500' },
-    { icon: Instagram, name: 'Instagram', link: '#', color: 'text-pink-500' },
-    { icon: Linkedin, name: 'LinkedIn', link: '#', color: 'text-blue-600' },
+    { icon: Instagram, name: 'Instagram', link: 'https://www.instagram.com/acm_vvitu?igsh=MXRzOXd0cWRrcGY5Yw==', color: 'text-pink-500' },
+    { icon: Linkedin, name: 'LinkedIn', link: 'https://www.linkedin.com/in/acmvvit/', color: 'text-blue-600' },
   ];
 
   return (
