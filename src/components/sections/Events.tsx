@@ -519,7 +519,7 @@ const Events: React.FC = () => {
                           </div>
                           
                           <div className={`flex-1 ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
-                            <h5 className="text-lg sm:text-xl font-bold text-holographic font-audiowide mb-2">
+                            <h5 className="text-lg sm:text-xl font-bold text-cyan-300 font-audiowide mb-2" style={{ textShadow: '0 0 8px rgba(6, 182, 212, 0.4), 0 0 16px rgba(6, 182, 212, 0.2)' }}>
                               {event.title}
                             </h5>
                             <p className="text-muted-foreground text-sm font-inter leading-relaxed mb-4">
