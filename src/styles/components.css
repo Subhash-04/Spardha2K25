@@ -440,6 +440,43 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
+/* Mobile specific fixes for hero cards */
+@media (max-width: 768px) {
+  .hero-card-fix {
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+  }
+  
+  .hero-card-fix * {
+    border-radius: inherit !important;
+  }
+  
+  /* Fix MagicCard border artifacts on mobile */
+  .card--border-glow {
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+  }
+  
+  .card--border-glow::before,
+  .card--border-glow::after {
+    border-radius: 9999px !important;
+  }
+}
+
+/* Footer live status overlay fix */
+.crystal-glass .absolute.inset-0.bg-gradient-to-r {
+  border-radius: 8px !important;
+}
+
+/* Ensure footer live status container and overlay have matching radius */
+.crystal-glass.p-4.rounded-lg {
+  border-radius: 8px !important;
+}
+
+.crystal-glass.p-4.rounded-lg .absolute.inset-0 {
+  border-radius: 8px !important;
+}
+
 @keyframes main-event-pulse {
   0%, 100% {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);

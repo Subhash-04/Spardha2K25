@@ -289,7 +289,7 @@ const Hero: React.FC = () => {
             >
               <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full hero-card-fix">
                 <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-foreground font-orbitron">VVITU Campus, Nambur, Guntur</span>
+                <span className="text-foreground font-orbitron">VVITU, Nambur, Guntur</span>
               </div>
             </MagicCard>
             
