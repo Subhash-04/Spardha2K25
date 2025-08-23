@@ -5,6 +5,11 @@ const GlobalEffects: React.FC = () => {
   const spotlightRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
+    // Check if device is mobile
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) return; // Disable spotlight on mobile
+    
     // Create global spotlight effect that follows the cursor
     const spotlight = document.createElement('div');
     spotlight.className = 'global-spotlight';

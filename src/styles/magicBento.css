@@ -227,6 +227,14 @@ html {
   ) !important;
 }
 
+/* Disable spotlight on mobile devices */
+@media (max-width: 768px) {
+  .global-spotlight {
+    display: none !important;
+    opacity: 0 !important;
+  }
+}
+
 /* Animation for all interactive elements */
 .animate-glow-subtle {
   animation: glow-subtle 4s ease-in-out infinite;

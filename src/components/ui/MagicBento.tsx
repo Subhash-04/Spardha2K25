@@ -392,7 +392,10 @@ const GlobalSpotlight: React.FC<{
   const isInsideSection = useRef(false);
 
   useEffect(() => {
-    if (disableAnimations || !gridRef?.current || !enabled) return;
+    // Check if device is mobile
+    const isMobile = window.innerWidth <= 768;
+    
+    if (disableAnimations || !gridRef?.current || !enabled || isMobile) return;
 
     const spotlight = document.createElement("div");
     spotlight.className = "global-spotlight";
