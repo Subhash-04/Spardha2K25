@@ -5,10 +5,11 @@ const GlobalEffects: React.FC = () => {
   const spotlightRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
-    // Check if device is mobile
+    // Check if device is mobile or touch device
     const isMobile = window.innerWidth <= 768;
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     
-    if (isMobile) return; // Disable spotlight on mobile
+    if (isMobile || isTouchDevice) return; // Disable spotlight on mobile and touch devices
     
     // Create global spotlight effect that follows the cursor
     const spotlight = document.createElement('div');
@@ -57,7 +58,8 @@ const GlobalEffects: React.FC = () => {
     
     // Global mouse move handler
     const handleMouseMove = (e: MouseEvent) => {
-      if (!spotlightRef.current) return;
+      // Additional check to prevent touch-triggered mouse events
+      if (!spotlightRef.current || e.type === 'touchmove' || e.type === 'touchstart') return;
       
       // Move the spotlight to follow cursor
       gsap.to(spotlightRef.current, {
@@ -106,9 +108,21 @@ const GlobalEffects: React.FC = () => {
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseleave', handleMouseLeave);
     
+    // Prevent touch events from triggering spotlight
+    const preventTouchSpotlight = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+    
+    document.addEventListener("touchstart", preventTouchSpotlight, { passive: false });
+    document.addEventListener("touchmove", preventTouchSpotlight, { passive: false });
+    document.addEventListener("touchend", preventTouchSpotlight, { passive: false });
+    
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener("touchstart", preventTouchSpotlight);
+      document.removeEventListener("touchmove", preventTouchSpotlight);
+      document.removeEventListener("touchend", preventTouchSpotlight);
       observer.disconnect();
       spotlightRef.current?.parentNode?.removeChild(spotlightRef.current);
     };

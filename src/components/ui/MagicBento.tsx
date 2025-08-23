@@ -392,10 +392,11 @@ const GlobalSpotlight: React.FC<{
   const isInsideSection = useRef(false);
 
   useEffect(() => {
-    // Check if device is mobile
+    // Check if device is mobile or touch device
     const isMobile = window.innerWidth <= 768;
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     
-    if (disableAnimations || !gridRef?.current || !enabled || isMobile) return;
+    if (disableAnimations || !gridRef?.current || !enabled || isMobile || isTouchDevice) return;
 
     const spotlight = document.createElement("div");
     spotlight.className = "global-spotlight";
@@ -422,7 +423,8 @@ const GlobalSpotlight: React.FC<{
     spotlightRef.current = spotlight;
 
     const handleMouseMove = (e: MouseEvent) => {
-      if (!spotlightRef.current || !gridRef.current) return;
+      // Additional check to prevent touch-triggered mouse events
+      if (!spotlightRef.current || !gridRef.current || e.type === 'touchmove' || e.type === 'touchstart') return;
 
       const section = gridRef.current.closest(".bento-section");
       const rect = section?.getBoundingClientRect();
@@ -518,10 +520,22 @@ const GlobalSpotlight: React.FC<{
 
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", handleMouseLeave);
+    
+    // Prevent touch events from triggering spotlight
+    const preventTouchSpotlight = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+    
+    document.addEventListener("touchstart", preventTouchSpotlight, { passive: false });
+    document.addEventListener("touchmove", preventTouchSpotlight, { passive: false });
+    document.addEventListener("touchend", preventTouchSpotlight, { passive: false });
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("touchstart", preventTouchSpotlight);
+      document.removeEventListener("touchmove", preventTouchSpotlight);
+      document.removeEventListener("touchend", preventTouchSpotlight);
       spotlightRef.current?.parentNode?.removeChild(spotlightRef.current);
     };
   }, [gridRef, disableAnimations, enabled, spotlightRadius, glowColor]);
