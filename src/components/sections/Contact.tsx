@@ -143,6 +143,8 @@ const Contact: React.FC = () => {
               >
                 <a 
                   href={contact.link} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="crystal-glass p-6 rounded-2xl text-center relative block w-full h-full"
                 >
                   {/* Background Effects */}
@@ -324,7 +326,7 @@ const Contact: React.FC = () => {
                 <div className="crystal-glass p-2 rounded-xl relative overflow-hidden">
                   <div className="relative w-full h-64 rounded-lg overflow-hidden">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.5441234567!2d80.4567890!3d16.3456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVasavi%20Vidya%20Vihar%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.8!2d80.524287!3d16.343460!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f0a2a8d6c2c7%3A0x123456789abcdef!2sVasireddy%20Venkatadri%20International%20Technological%20University%2C%20Namburu%2C%20Pedakakani%2C%20Guntur%2C%20Andhra%20Pradesh%20522508%2C%20India!5e0!3m2!1sen!2sin!4v1640995200000!5m2!1sen!2sin"
                       width="100%"
                       height="100%"
                       style={{ border: 0, borderRadius: '8px' }}
