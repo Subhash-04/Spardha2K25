@@ -84,8 +84,6 @@ const MainMedia: React.FC = () => {
                       alt="Spardha 2025 Main Poster" 
                       className="w-full object-contain max-h-[600px]"
                     />
-                    <span className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
-
                     
                     <span className="absolute top-4 right-4 bg-black/50 p-2 rounded-lg backdrop-blur-sm">
                       <ImageIcon className="w-5 h-5 text-white" />
