@@ -1,9 +1,11 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { Instagram, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import vvituLogo from '../../assets/images/vvituacm_logo.png';
 
 const Footer: React.FC = () => {
+  const location = useLocation();
 
   const socialLinks = [
     { icon: Instagram, name: 'Instagram', link: 'https://www.instagram.com/acm_vvitu?igsh=MXRzOXd0cWRrcGY5Yw==', color: 'text-pink-500' },
@@ -19,18 +21,34 @@ const Footer: React.FC = () => {
   ];
 
   const handleLinkClick = (link: any, e: React.MouseEvent) => {
+    const isOnEventOrCampusPage = location.pathname === '/events' || location.pathname === '/campus';
+    
     if (link.type === 'navigate') {
       // For campus page navigation
       window.location.href = link.link;
+    } else if (isOnEventOrCampusPage) {
+      // When on event or campus pages, redirect to main page with appropriate sections
+      e.preventDefault();
+      if (link.name === 'Home') {
+        window.location.href = '/';
+      } else if (link.name === 'About') {
+        window.location.href = '/#about';
+      } else if (link.name === 'Register') {
+        // Redirect to main page and scroll to register button in main media
+        window.location.href = '/#register';
+      } else {
+        // For other links, redirect to main page with hash
+        window.location.href = `/${link.link}`;
+      }
     } else if (link.name === 'Register') {
-      // For register button scroll
+      // For register button scroll on main page
       e.preventDefault();
       const registerElement = document.querySelector('[data-register-button]');
       if (registerElement) {
         registerElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     } else {
-      // For other scroll links
+      // For other scroll links on main page
       e.preventDefault();
       const targetElement = document.querySelector(link.link);
       if (targetElement) {
