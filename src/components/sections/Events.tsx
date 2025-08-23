@@ -351,7 +351,7 @@ const Events: React.FC = () => {
                               <event.icon className="w-6 h-6 text-white" />
                             </div>
                             <div>
-                              <h3 className="text-lg sm:text-xl font-bold text-holographic font-audiowide event-title">
+                              <h3 className="text-lg sm:text-xl font-bold text-cyan-300 font-audiowide event-title" style={{ textShadow: '0 0 8px rgba(6, 182, 212, 0.4), 0 0 16px rgba(6, 182, 212, 0.2)' }}>
                                 {event.title}
                               </h3>
                               <div className="text-sm text-muted-foreground font-orbitron">

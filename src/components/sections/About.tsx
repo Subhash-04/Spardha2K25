@@ -179,7 +179,7 @@ const About: React.FC = () => {
                 <div className="scan-line-bottom" />
 
                 <div className="relative z-10">
-                  <h3 className='text-xl sm:text-2xl font-bold text-holographic font-audiowide mb-4'>
+                  <h3 className='text-xl sm:text-2xl font-bold text-cyan-300 font-audiowide mb-4' style={{ textShadow: '0 0 8px rgba(6, 182, 212, 0.4), 0 0 16px rgba(6, 182, 212, 0.2)' }}>
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground font-inter leading-relaxed">
