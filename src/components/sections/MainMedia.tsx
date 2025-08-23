@@ -186,29 +186,29 @@ const MainMedia: React.FC = () => {
                     </video>
                     
                     <span className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
-                    <figcaption className="absolute bottom-4 left-4">
-                      <h3 className="text-2xl font-bold text-white font-audiowide mb-2">
+                    <figcaption className="absolute bottom-2 left-2 md:bottom-4 md:left-4">
+                      <h3 className="text-lg md:text-2xl font-bold text-white font-audiowide mb-1 md:mb-2">
                         Teaser Video
                       </h3>
-                      <p className="text-sm text-white/80 font-inter max-w-md">
+                      <p className="text-xs md:text-sm text-white/80 font-inter max-w-xs md:max-w-md">
                         Watch the official promotional video for Spardha 2025
                       </p>
                     </figcaption>
                     
                     {/* Instagram Audio Experience Button */}
-                    <div className="absolute bottom-4 right-4">
+                    <div className="absolute bottom-2 right-2 md:bottom-4 md:right-4">
                       <button 
                         onClick={() => window.open('https://www.instagram.com/acm_vvitu/reel/DNpwTYWy_1_/', '_blank')}
-                        className="crystal-glass p-3 rounded-full relative group transition-all duration-300 backdrop-blur-sm hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] border border-white/20 hover:border-white/40"
+                        className="crystal-glass p-2 md:p-3 rounded-full relative group transition-all duration-300 backdrop-blur-sm hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] border border-white/20 hover:border-white/40"
                       >
                         <div className="absolute inset-0">
                           <span className="crystal-facet-top opacity-20" />
                           <span className="crystal-rotate-12s opacity-10" />
                         </div>
                         
-                        <div className="relative z-10 flex items-center gap-2">
-                          <span className="text-lg">🎵</span>
-                          <span className="text-sm font-semibold text-white font-inter">
+                        <div className="relative z-10 flex items-center gap-1 md:gap-2">
+                          <span className="text-sm md:text-lg">🎵</span>
+                          <span className="text-xs md:text-sm font-semibold text-white font-inter">
                             Audio on Insta
                           </span>
                         </div>
