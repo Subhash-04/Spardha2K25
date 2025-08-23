@@ -383,27 +383,26 @@ const EventDetailPage: React.FC = () => {
                   </p>
                   
                   <div className="space-y-6">
-                    {/* Event Details */}
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full" />
-                        <span className="text-muted-foreground font-inter">
-                          <strong className="text-foreground">Category:</strong> {event.category}
-                        </span>
+                    {/* Domains Section - Only for Tech Thesis */}
+                    {event.domains && (
+                      <div className="crystal-glass p-6 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/5 to-secondary/5">
+                        <h3 className="text-xl font-bold text-gradient font-audiowide mb-4 flex items-center gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary" />
+                          Available Domains
+                        </h3>
+                        <p className="text-sm text-muted-foreground font-inter mb-4">
+                          Teams must select one domain from the following options:
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {event.domains.map((domain: string, index: number) => (
+                            <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-primary/10 border border-primary/20">
+                              <span className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full flex-shrink-0"></span>
+                              <span className="text-foreground font-inter font-medium text-sm">{domain}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full" />
-                        <span className="text-muted-foreground font-inter">
-                          <strong className="text-foreground">Participants:</strong> {event.participants}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full" />
-                        <span className="text-muted-foreground font-inter">
-                          <strong className="text-foreground">Venue:</strong> {event.venue}
-                        </span>
-                      </div>
-                    </div>
+                    )}
 
                     {/* Event Rules */}
                     <div className="crystal-glass p-6 rounded-2xl border border-primary/20">
@@ -411,31 +410,23 @@ const EventDetailPage: React.FC = () => {
                         <CheckCircle className="w-5 h-5 text-primary" />
                         Event Rules
                       </h3>
-                      <ul className="space-y-3 text-muted-foreground font-inter">
+                      <ul className="space-y-2 text-muted-foreground font-inter">
                         <li className="flex items-start gap-3">
                           <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                           Team size: {event.teamSize}
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                          Registration is completely FREE - No registration fee required
+                          Registration is completely FREE
                         </li>
-                        <li className="flex items-start gap-3">
-                          <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                          Registration is mandatory before the event
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                          Participants must bring valid ID proof
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                          Follow all event guidelines and instructions
-                        </li>
+                        {event.rules && event.rules.slice(0, 3).map((rule: string, index: number) => (
+                          <li key={index} className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                            {rule}
+                          </li>
+                        ))}
                       </ul>
                     </div>
-
-
                   </div>
                 </div>
 
