@@ -76,9 +76,21 @@ const eventData: Record<string, any> = {
     venue: "Seminar Hall",
     eventType: "Main Event",
     teamSize: "Teams of 3",
-    about: "The Paper Presentation at Spardha 2025, VVIT is a platform where innovation meets imagination. Each team, through 8 slides and 6 minutes, unveils a new dimension of ideas and solutions. Covering domains from AI to Blockchain, every presentation is a portal to discovery. It's not just a contest, but a journey through the multiverse of possibilities.",
+    about: "The Paper Presentation at Spardha 2025, VVIT is a platform where innovation meets imagination. Each team, through 8 slides and 6 minutes, unveils a new dimension of ideas and solutions. Teams must select one domain from the provided list and present their technological solutions and research findings. Covering domains from AI to Blockchain, every presentation is a portal to discovery. It's not just a contest, but a journey through the multiverse of possibilities.",
+    domains: [
+      "AI (ML, DL, LLM)",
+      "IoT",
+      "Cybersecurity",
+      "AR (Augmented Reality) and VR (Virtual Reality)",
+      "Blockchain",
+      "Entrepreneurship",
+      "Human Resource Management",
+      "Startup Development and Innovation"
+    ],
     rules: [
       "Each team gets 5–6 minutes to present",
+      "Teams must select one domain from the provided list",
+      "Presentation must be relevant to the selected domain",
       "Only registered team members may present",
       "No changes in team or topic after registration",
       "Plagiarism will result in disqualification",
