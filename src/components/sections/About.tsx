@@ -50,13 +50,13 @@ const About: React.FC = () => {
       gradient: "from-white to-gray-200",
     },
     {
-      title: "AI Innovation Skills",
-      description: "Learn prompt engineering and AI interaction through Prompt Realm",
+      title: "Research & Presentation",
+      description: "Build technical research and presentation abilities with Tech Thesis",
       gradient: "from-white to-gray-200",
     },
     {
-      title: "Research & Presentation",
-      description: "Build technical research and presentation abilities with Tech Thesis",
+      title: "AI Innovation Skills",
+      description: "Learn prompt engineering and AI interaction through Prompt Realm",
       gradient: "from-white to-gray-200",
     },
   ];

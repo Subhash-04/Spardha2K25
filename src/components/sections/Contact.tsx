@@ -246,13 +246,13 @@ const Contact: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full animate-glow-pulse" />
                     <span className="text-foreground font-orbitron text-sm">
-                      Registration Opens: February 1, 2025
+                      Registration Opens: September 10, 2025
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full animate-glow-pulse" style={{ animationDelay: '0.5s' }} />
                     <span className="text-foreground font-orbitron text-sm">
-                      Early Bird Deadline: February 28, 2025
+                      Early Bird Deadline: September 15, 2025
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -264,7 +264,7 @@ const Contact: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
                     <span className="text-foreground font-orbitron text-sm">
-                      Venue: VVIT Campus, Guntur
+                      Venue: VVIT University, Guntur
                     </span>
                   </div>
                 </div>
