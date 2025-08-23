@@ -494,7 +494,7 @@ const EventDetailPage: React.FC = () => {
                     animationStepDuration={0.3}
                     className="w-full rounded-2xl shadow-2xl"
                     style={{ width: '100%', aspectRatio: 'auto' }}
-                    aspectRatio="auto"
+aspectRatio="75%"
                   />
                 </div>
 
