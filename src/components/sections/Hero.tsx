@@ -274,7 +274,7 @@ const Hero: React.FC = () => {
             >
               <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full hero-card-fix">
                 <Calendar className="w-5 h-5 text-primary" />
-                <span className="text-foreground font-orbitron">August 22-23, 2025</span>
+                <span className="text-foreground font-orbitron">September 16-17, 2025</span>
               </div>
             </MagicCard>
             

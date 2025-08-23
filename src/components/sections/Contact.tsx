@@ -201,6 +201,8 @@ const Contact: React.FC = () => {
                     <motion.a
                       key={social.name}
                       href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="neu-button p-4 rounded-xl flex items-center gap-3 hover:bg-primary/5 transition-colors"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -256,7 +258,7 @@ const Contact: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-purple-400 rounded-full animate-glow-pulse" style={{ animationDelay: '1s' }} />
                     <span className="text-foreground font-orbitron text-sm">
-                      Festival Dates: August 22-23, 2025
+                      Festival Dates: September 16-17, 2025
                     </span>
                   </div>
                   <div className="flex items-center gap-3">

@@ -57,8 +57,8 @@ const Footer: React.FC = () => {
             </div>
             
             <p className="text-sm text-muted-foreground font-inter leading-relaxed pl-2 border-l-2 border-primary/50">
-              The ultimate techno-cultural festival that merges cutting-edge technology with dystopian aesthetics.
-              Join us for an unforgettable Tech experience.
+              Spardha 2025 at VVIT University- A journey through the multiverse of technology and imagination, where 
+              every idea shapes a new reality. Step into a dimension of infinite possibilities.
             </p>
             
             <div className="flex gap-3">
@@ -66,6 +66,8 @@ const Footer: React.FC = () => {
                 <a
                   key={social.name}
                   href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="crystal-glass p-2.5 rounded-lg inline-flex items-center justify-center relative hover:bg-primary/10 shadow-glow hover:scale-110 active:scale-95 transition-all duration-300 hover:shadow-primary/60"
                 >
                   <div className="absolute inset-0">
@@ -123,7 +125,7 @@ const Footer: React.FC = () => {
           {/* Newsletter */}
           <div className="space-y-6 animate-fade-in-up animation-delay-500">
             <div className="dashboard-glass px-4 py-3 rounded-lg inline-block shadow-glow animate-glow-subtle">
-              <h4 className="text-lg font-orbitron text-gradient">Stay Connected</h4>
+              <h4 className="text-lg font-orbitron text-gradient">Join Our Community</h4>
             </div>
             <p className="text-sm text-muted-foreground font-inter">
               Subscribe to our newsletter for updates and exclusive content.

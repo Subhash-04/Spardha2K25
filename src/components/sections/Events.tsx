@@ -38,8 +38,8 @@ const Events: React.FC = () => {
   }, []);
 
   const days = [
-    { id: 'day1', label: 'Day 1', date: 'August 22' },
-    { id: 'day2', label: 'Day 2', date: 'August 23' },
+    { id: 'day1', label: 'Day 1', date: 'September 16' },
+    { id: 'day2', label: 'Day 2', date: 'September 17' },
   ];
 
   const events = {
