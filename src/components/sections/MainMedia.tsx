@@ -176,9 +176,18 @@ const MainMedia: React.FC = () => {
                       className="w-full h-full object-cover absolute inset-0"
                       poster={mainPoster}
                       controls
-                      autoPlay
                       muted
                       loop
+                      preload="none"
+                      playsInline
+                      onLoadStart={(e) => {
+                        const video = e.target as HTMLVideoElement;
+                        video.playbackRate = 1;
+                      }}
+                      onCanPlay={(e) => {
+                        const video = e.target as HTMLVideoElement;
+                        video.currentTime = 0;
+                      }}
                     >
                       <source src={mainVideo} type="video/mp4" />
                       Your browser does not support the video tag.

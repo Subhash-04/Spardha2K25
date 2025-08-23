@@ -461,6 +461,20 @@
   .card--border-glow::after {
     border-radius: 9999px !important;
   }
+  
+  /* Fix footer system online div overlay radius on mobile */
+  .crystal-glass.p-4.rounded-lg {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+  
+  .crystal-glass.p-4.rounded-lg .absolute.inset-0 {
+    border-radius: 8px !important;
+  }
+  
+  .crystal-glass.p-4.rounded-lg .absolute.inset-0.bg-gradient-to-r {
+    border-radius: 8px !important;
+  }
 }
 
 /* Footer live status overlay fix */
