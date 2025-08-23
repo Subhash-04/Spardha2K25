@@ -25,8 +25,8 @@ const eventData: Record<string, any> = {
   'codeverse': {
     title: "CodeVerse",
     tagline: "Where Every Code is a Universe, and Every Coder an Saver",
-    date: "22 August, Thursday",
-    time: "10:00 AM",
+    date: "16 September, Tuesday",
+    time: "9:00 AM",
     venue: "Computer Lab Block A",
     eventType: "Main Event",
     teamSize: "Individual (1)",
@@ -48,8 +48,8 @@ const eventData: Record<string, any> = {
   'blind-sync': {
     title: "Blind Sync",
     tagline: "Two Minds One Vision",
-    date: "22 August, Thursday",
-    time: "02:00 PM",
+    date: "16 September, Tuesday",
+    time: "10:00 AM",
     venue: "Main Auditorium",
     eventType: "Main Event",
     teamSize: "Teams of 2",
@@ -71,8 +71,8 @@ const eventData: Record<string, any> = {
   'tech-thesis': {
     title: "Tech Thesis",
     tagline: "Where Every Slide Transforms into Insights",
-    date: "23 August, Friday",
-    time: "11:00 AM",
+    date: "17 September, Wednesday",
+    time: "9:00 AM",
     venue: "Seminar Hall",
     eventType: "Main Event",
     teamSize: "Teams of 3",
@@ -105,8 +105,8 @@ const eventData: Record<string, any> = {
    'prompt-realm': {
     title: "Prompt Realm",
     tagline: "Craft the Way through Magic and Logic",
-    date: "23 August, Friday",
-    time: "03:00 PM",
+    date: "17 September, Wednesday",
+    time: "9:30 AM",
     venue: "AI Lab",
     eventType: "Main Event",
     teamSize: "Individual (1)",
@@ -127,7 +127,7 @@ const eventData: Record<string, any> = {
   // Spot Events
   'spot-event-1': {
     title: "Image Word Guessing",
-    date: "22 August, Thursday",
+    date: "16 September, Tuesday",
     time: "01:00 PM",
     venue: "Activity Room 1",
     eventType: "Spot Event",
@@ -141,7 +141,7 @@ const eventData: Record<string, any> = {
   },
   'spot-event-2': {
     title: "Tech Trivia",
-    date: "22 August, Thursday",
+    date: "16 September, Tuesday",
     time: "03:00 PM",
     venue: "Activity Room 2",
     eventType: "Spot Event",
@@ -155,7 +155,7 @@ const eventData: Record<string, any> = {
   },
   'spot-event-3': {
     title: "Code Debugging",
-    date: "23 August, Friday",
+    date: "17 September, Wednesday",
     time: "10:00 AM",
     venue: "Computer Lab Block B",
     eventType: "Spot Event",
@@ -169,7 +169,7 @@ const eventData: Record<string, any> = {
   },
   'spot-event-4': {
     title: "UI/UX Design",
-    date: "23 August, Friday",
+    date: "17 September, Wednesday",
     time: "02:00 PM",
     venue: "Design Studio",
     eventType: "Spot Event",
@@ -183,7 +183,7 @@ const eventData: Record<string, any> = {
   },
   'spot-event-5': {
     title: "Algorithm Challenge",
-    date: "23 August, Friday",
+    date: "17 September, Wednesday",
     time: "10:30 AM",
     venue: "Activity Room 3",
     eventType: "Spot Event",
@@ -197,7 +197,7 @@ const eventData: Record<string, any> = {
   },
   'spot-event-6': {
     title: "Creative Coding",
-    date: "23 August, Friday",
+    date: "17 September, Wednesday",
     time: "12:30 PM",
     venue: "Activity Room 4",
     eventType: "Spot Event",
@@ -211,7 +211,7 @@ const eventData: Record<string, any> = {
   },
   'spot-event-7': {
     title: "Tech Quiz Marathon",
-    date: "23 August, Friday",
+    date: "17 September, Wednesday",
     time: "02:30 PM",
     venue: "Activity Room 5",
     eventType: "Spot Event",
@@ -225,7 +225,7 @@ const eventData: Record<string, any> = {
   },
   'spot-event-8': {
     title: "Innovation Pitch",
-    date: "23 August, Friday",
+    date: "17 September, Wednesday",
     time: "04:30 PM",
     venue: "Activity Room 6",
     eventType: "Spot Event",
@@ -414,10 +414,6 @@ const EventDetailPage: React.FC = () => {
                         <li className="flex items-start gap-3">
                           <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                           Team size: {event.teamSize}
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                          Registration is completely FREE
                         </li>
                         {event.rules && event.rules.slice(0, 3).map((rule: string, index: number) => (
                           <li key={index} className="flex items-start gap-3">
