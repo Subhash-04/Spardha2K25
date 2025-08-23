@@ -123,20 +123,9 @@ const Experience: React.FC = () => {
                   className="w-full h-full object-cover"
                   controls
                   loop
-                  preload="none"
+                  preload="metadata"
                   controlsList="nodownload"
                   playsInline
-                  poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23000'/%3E%3C/svg%3E"
-                  onLoadStart={() => {
-                    if (videoRef.current) {
-                      videoRef.current.playbackRate = 1;
-                    }
-                  }}
-                  onCanPlay={() => {
-                    if (videoRef.current) {
-                      videoRef.current.currentTime = 0;
-                    }
-                  }}
                 >
                   <source src={mainVideo} type="video/mp4" />
                   Your browser does not support the video tag.

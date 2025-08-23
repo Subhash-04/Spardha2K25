@@ -129,14 +129,11 @@ const Footer: React.FC = () => {
             </div>
             <div className="space-y-4">
               <div className="crystal-glass p-4 rounded-lg relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 animate-pulse"></div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-xs font-orbitron text-green-400">SYSTEM ONLINE</span>
-                  </div>
-                  <div className="text-sm text-muted-foreground font-inter">Registration Portal Active</div>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-xs font-orbitron text-green-400">SYSTEM ONLINE</span>
                 </div>
+                <div className="text-sm text-muted-foreground font-inter">Registration Portal Active</div>
               </div>
             </div>
           </div>
