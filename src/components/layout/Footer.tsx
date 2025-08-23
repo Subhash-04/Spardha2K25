@@ -11,12 +11,33 @@ const Footer: React.FC = () => {
   ];
 
   const quickLinks = [
-    { name: 'Home', link: '#home' },
-    { name: 'Events', link: '#events' },
-    { name: 'Campus', link: '#campus' },
-    { name: 'Register', link: '#register' },
-    { name: 'About', link: '#about' },
+    { name: 'Home', link: '#home', type: 'scroll' },
+    { name: 'Events', link: '#events', type: 'scroll' },
+    { name: 'Campus', link: '/campus', type: 'navigate' },
+    { name: 'Register', link: '#register', type: 'scroll' },
+    { name: 'About', link: '#about', type: 'scroll' },
   ];
+
+  const handleLinkClick = (link: any, e: React.MouseEvent) => {
+    if (link.type === 'navigate') {
+      // For campus page navigation
+      window.location.href = link.link;
+    } else if (link.name === 'Register') {
+      // For register button scroll
+      e.preventDefault();
+      const registerElement = document.querySelector('[data-register-button]');
+      if (registerElement) {
+        registerElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } else {
+      // For other scroll links
+      e.preventDefault();
+      const targetElement = document.querySelector(link.link);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
 
 
@@ -86,14 +107,14 @@ const Footer: React.FC = () => {
             </div>
             <div className="grid grid-cols-2 gap-2">
               {quickLinks.map((link, index) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.link}
-                  className={`flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 animate-fade-in-up animation-delay-${300 + index * 100}`}
+                  onClick={(e) => handleLinkClick(link, e)}
+                  className={`flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 animate-fade-in-up animation-delay-${300 + index * 100} text-left`}
                 >
                   <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" style={{ animationDelay: `${index * 0.2}s` }} />
                   <span className="font-orbitron text-sm">{link.name}</span>
-                </a>
+                </button>
               ))}
             </div>
           </div>

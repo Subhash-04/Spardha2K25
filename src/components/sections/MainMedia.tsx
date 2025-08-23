@@ -115,6 +115,7 @@ const MainMedia: React.FC = () => {
                 particleCount={8}
               >
                 <button 
+                  data-register-button
                   onClick={() => window.open('https://acm.vvitguntur.com/contact-us/register', '_blank')}
                 className="crystal-glass p-6 rounded-2xl relative group transition-all duration-300 backdrop-blur-sm animate-pulse-zoom hover:animate-none hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] border border-white/20 hover:border-white/40">
                   <div className="absolute inset-0">
