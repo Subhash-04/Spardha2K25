@@ -205,7 +205,7 @@ const Contact: React.FC = () => {
                       href={social.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="neu-button p-4 rounded-xl flex items-center gap-3 hover:bg-primary/5 transition-colors"
+                      className="neu-button p-5 sm:p-4 rounded-xl flex items-center gap-4 sm:gap-3 hover:bg-primary/5 transition-colors"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, y: 10 }}
@@ -213,8 +213,8 @@ const Contact: React.FC = () => {
                       transition={{ delay: index * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <social.icon className={`w-5 h-5 ${social.color}`} />
-                      <span className="text-foreground font-orbitron text-sm">
+                      <social.icon className={`w-6 h-6 sm:w-5 sm:h-5 ${social.color}`} />
+                      <span className="text-foreground font-orbitron text-base sm:text-sm">
                         {social.name}
                       </span>
                     </motion.a>
