@@ -1,12 +1,13 @@
 # 🎯 SPARDHA 2025 - Tech Fest Website
 
-A futuristic cyberpunk-themed website for "Spardha 2025" - the annual techno-cultural festival by ACM VVITU Student Chapter. Built with sophisticated glassmorphism, neumorphism, holographic effects, and advanced 3D animations.
+A cutting-edge cyberpunk-themed website for "Spardha 2025" - the annual techno-cultural festival by ACM VVITU Student Chapter. Built with React 18, TypeScript, and featuring sophisticated glassmorphism effects, advanced animations, and modern web technologies.
 
 ![Spardha 2025 Banner](https://img.shields.io/badge/SPARDHA-2025-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
 
 ## 🎨 Design Features
 
@@ -37,17 +38,48 @@ src/
 ├── components/
 │   ├── layout/
 │   │   ├── Preloader.tsx      # Animated loading screen with rotating logo
-│   │   ├── Header.tsx         # Fixed glassmorphism navigation
-│   │   └── Footer.tsx         # Cyberpunk footer with stats
-│   └── sections/
-│       ├── Hero.tsx           # Main landing with holographic title
-│       ├── About.tsx          # Festival description with animated cards
-│       ├── Events.tsx         # Interactive event schedule
-│       ├── CampusNavigation.tsx # 3x2 campus map with crystal effects
-│       └── Contact.tsx        # Contact information with team details
-├── assets/                    # Images and media files
-├── index.css                 # Glassmorphism effects and custom styles
-└── App.tsx                   # Main application component
+│   │   ├── Header.tsx         # Fixed glassmorphism navigation with routing
+│   │   └── Footer.tsx         # Cyberpunk footer with live status
+│   ├── sections/
+│   │   ├── Hero.tsx           # Main landing with holographic title
+│   │   ├── About.tsx          # Festival description with animated cards
+│   │   ├── Events.tsx         # Interactive event schedule with filtering
+│   │   ├── Experience.tsx     # Experience showcase section
+│   │   ├── MainMedia.tsx      # Media gallery and registration
+│   │   ├── CampusNavigation.tsx # 3x2 campus map with crystal effects
+│   │   └── Contact.tsx        # Contact information with team details
+│   ├── ui/
+│   │   ├── MagicCard.tsx      # Reusable card component with effects
+│   │   ├── LazyImage.tsx      # Optimized image loading
+│   │   ├── CircularGallery.tsx # Circular image gallery
+│   │   └── GlobalEffects.tsx  # Global visual effects
+│   └── pages/
+│       └── NotFound.tsx       # 404 error page
+├── pages/
+│   ├── MainPage.tsx           # Home page with all sections
+│   ├── EventsPage.tsx         # Dedicated events page
+│   ├── EventDetailPage.tsx    # Individual event details
+│   └── CampusPage.tsx         # Campus navigation page
+├── assets/
+│   ├── images/                # Event posters and graphics
+│   ├── videos/                # Video content
+│   ├── optimized/             # Optimized media files
+│   └── backup/                # Backup assets
+├── styles/
+│   ├── animations.css         # Custom animations
+│   ├── base.css              # Base styles
+│   ├── components.css         # Component-specific styles
+│   ├── glass-effects.css      # Glassmorphism effects
+│   └── magicBento.css         # Magic card effects
+├── hooks/                     # Custom React hooks
+├── utils/
+│   ├── mediaCache.ts          # Media caching utilities
+│   ├── particlePool.ts        # Particle system optimization
+│   └── performanceOptimizer.tsx # Performance optimization
+├── types/
+│   └── video.d.ts             # TypeScript type definitions
+├── index.css                  # Global styles and custom CSS
+└── App.tsx                    # Main application with routing
 ```
 
 ## 🎭 Component Specifications
@@ -147,9 +179,20 @@ npm start
 4. **Open your browser**
 Navigate to `http://localhost:3000`
 
-### Build for Production
+### Available Scripts
+
 ```bash
+# Start development server
+npm start
+
+# Build for production (optimized)
 npm run build
+
+# Build with React scripts (alternative)
+npm run build:react
+
+# Eject from Create React App (not recommended)
+npm run eject
 ```
 
 ## 🎯 Key Features Implemented
@@ -180,13 +223,29 @@ npm run build
 
 ## 🔧 Technical Implementation
 
-### Dependencies
+### Core Dependencies
 ```json
 {
-  "framer-motion": "^12.23.3",
-  "lucide-react": "^0.462.0",
-  "react": "^18.2.0",
-  "typescript": "^4.9.5"
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-router-dom": "^7.8.1",
+  "typescript": "^4.9.5",
+  "framer-motion": "^12.23.12",
+  "gsap": "^3.13.0",
+  "lucide-react": "^0.539.0",
+  "ogl": "^1.0.11",
+  "web-vitals": "^2.1.4"
+}
+```
+
+### Development Dependencies
+```json
+{
+  "@craco/craco": "^7.1.0",
+  "autoprefixer": "^10.4.21",
+  "postcss": "^8.5.6",
+  "react-scripts": "5.0.1",
+  "tailwindcss": "^3.4.17"
 }
 ```
 
@@ -313,5 +372,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ by ACM VVIT for the cyberpunk future of technology and culture.**
 
-🎭 *"ENTERING CYBERPUNK MODE... SYSTEM READY"* 🎭#   S p a r d h a 2 K 2 5  
+🎭 *"ENTERING CYBERPUNK MODE... SYSTEM READY"* 🎭#   S p a r d h a 2 K 2 5 
+ 
  

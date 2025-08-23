@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Image as ImageIcon } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import LazyImage from '../ui/LazyImage';
-import mainPoster from '../../assets/images/main.jpg';
-import mainVideo from '../../assets/videos/main.mp4'; // Temporarily disabled for optimization
+import mainPoster from '../../assets/images/main.png';
+import mainVideo from '../../assets/videos/promo.mp4'; // Updated to use promo video
 
 const MainMedia: React.FC = () => {
   const containerVariants = {
@@ -193,6 +193,29 @@ const MainMedia: React.FC = () => {
                         Watch the official promotional video for Spardha 2025
                       </p>
                     </figcaption>
+                    
+                    {/* Instagram Audio Experience Button */}
+                    <div className="absolute bottom-4 right-4">
+                      <button 
+                        onClick={() => window.open('https://www.instagram.com/acm_vvitu/reel/DNpwTYWy_1_/', '_blank')}
+                        className="crystal-glass p-3 rounded-full relative group transition-all duration-300 backdrop-blur-sm hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] border border-white/20 hover:border-white/40"
+                      >
+                        <div className="absolute inset-0">
+                          <span className="crystal-facet-top opacity-20" />
+                          <span className="crystal-rotate-12s opacity-10" />
+                        </div>
+                        
+                        <div className="relative z-10 flex items-center gap-2">
+                          <span className="text-lg">🎵</span>
+                          <span className="text-sm font-semibold text-white font-inter">
+                            Audio on Insta
+                          </span>
+                        </div>
+                        
+                        {/* Hover effect overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+                      </button>
+                    </div>
                   </figure>
                 </figure>
               </MagicCard>

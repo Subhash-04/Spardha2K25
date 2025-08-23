@@ -398,8 +398,8 @@ const GlobalSpotlight: React.FC<{
     spotlight.className = "global-spotlight";
     spotlight.style.cssText = `
       position: fixed;
-      width: 800px;
-      height: 800px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
       pointer-events: none;
       background: radial-gradient(circle,

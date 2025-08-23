@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Building, Users, Cpu, FlaskConical, Microscope, Wifi, Coffee, BookOpen, Car } from 'lucide-react';
+import { MapPin, Building, Cpu, FlaskConical, Microscope } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
+import navImage from '../../assets/images/nav.png';
 
 interface CampusBlock {
   id: string;
@@ -18,51 +19,20 @@ const campusBlocks: CampusBlock[] = [
     name: 'Block A',
     color: 'from-blue-400 to-blue-600',
     position: { row: 1, col: 1 },
-    labs: ['Computer Lab 1', 'Computer Lab 2', 'Software Lab'],
-    facilities: ['Rooms: A101-A150', 'Wi-Fi Zone', 'Study Area']
-  },
-  {
-    id: 'B', 
-    name: 'Block B',
-    color: 'from-purple-400 to-purple-600',
-    position: { row: 1, col: 2 },
-    labs: ['Electronics Lab', 'Digital Lab', 'VLSI Lab'],
-    facilities: ['Rooms: B101-B150', 'Project Room', 'Seminar Hall']
-  },
-  {
-    id: 'C',
-    name: 'Block C', 
-    color: 'from-green-400 to-green-600',
-    position: { row: 2, col: 1 },
-    labs: ['Physics Lab', 'Chemistry Lab', 'Bio-Tech Lab'],
-    facilities: ['Rooms: C101-C150', 'Research Center', 'Library Wing']
-  },
-  {
-    id: 'D',
-    name: 'Block D',
-    color: 'from-orange-400 to-orange-600', 
-    position: { row: 2, col: 2 },
-    labs: ['Mechanical Lab', 'CAD Lab', 'Workshop'],
-    facilities: ['Rooms: D101-D150', 'Innovation Hub', 'Maker Space']
+    labs: ['Computer Lab 1', 'Computer Lab 2', 'Software Lab', 'Electronics Lab', 'Digital Lab', 'VLSI Lab', 'Physics Lab', 'Chemistry Lab', 'Bio-Tech Lab', 'Mechanical Lab', 'CAD Lab', 'Workshop'],
+    facilities: ['Rooms: A101-A150', 'Wi-Fi Zone', 'Study Area', 'Project Room', 'Seminar Hall', 'Research Center', 'Library Wing', 'Innovation Hub', 'Maker Space']
   },
   {
     id: 'NEW',
     name: 'New Block',
     color: 'from-cyan-400 to-cyan-600',
-    position: { row: 1, col: 3 },
+    position: { row: 1, col: 2 },
     labs: ['AI/ML Lab', 'Data Science Lab', 'IoT Lab'],
     facilities: ['Rooms: N101-N120', 'Co-working Space', 'Event Hall']
   }
 ];
 
-const commonFacilities = [
-  { name: 'Main Auditorium', icon: Users, description: 'Capacity: 500 seats' },
-  { name: 'Central Library', icon: BookOpen, description: '24/7 Digital Access' },
-  { name: 'Food Court', icon: Coffee, description: 'Multi-cuisine options' },
-  { name: 'Parking Area', icon: Car, description: '200+ vehicle capacity' },
-  { name: 'Sports Complex', icon: Building, description: 'Indoor & Outdoor' },
-  { name: 'Wi-Fi Campus', icon: Wifi, description: 'High-speed internet' }
-];
+
 
 const CampusNavigation: React.FC = () => {
   return (
@@ -127,8 +97,24 @@ const CampusNavigation: React.FC = () => {
                 VVITU Campus Layout - Nambur, Guntur
               </h3>
               
+              {/* Navigation Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="mb-6 relative z-10 flex justify-center"
+              >
+                <img 
+                  src={navImage} 
+                  alt="Campus Navigation" 
+                  className="max-w-full h-auto rounded-2xl shadow-2xl border border-white/20"
+                  style={{ maxHeight: '300px' }}
+                />
+              </motion.div>
+              
               {/* Enhanced Grid Container */}
-              <div className="grid grid-cols-3 gap-4 mb-8 relative z-10">
+              <div className="grid grid-cols-2 gap-4 mb-8 relative z-10">
                 {campusBlocks.map((block, index) => (
                   <motion.div
                     key={block.id}
@@ -305,66 +291,7 @@ const CampusNavigation: React.FC = () => {
               ))}
             </div>
 
-            {/* Common Facilities */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              <MagicCard
-                className="ultra-liquid-glass rounded-2xl p-6 relative"
-                glowColor="0, 200, 255"
-                enableTilt={false}
-                enableMagnetism={true}
-                clickEffect={true}
-                particleCount={12}
-              >
-                <div className="absolute inset-0">
-                  <div className="bg-orb-purple opacity-20" />
-                  <div className="crystal-facet-center" />
-                </div>
 
-                <div className="relative z-10">
-                <h4 className="text-lg font-semibold text-gradient mb-4 font-audiowide">
-                  COMMON FACILITIES
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {commonFacilities.map((facility, index) => (
-                    <motion.div
-                      key={facility.name}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: index * 0.05 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <MagicCard
-                        className="crystal-glass p-3 rounded-xl relative"
-                        glowColor="0, 200, 255"
-                        enableTilt={false}
-                        enableMagnetism={false}
-                        clickEffect={true}
-                        particleCount={4}
-                      >
-                        <div className="hud-status-vertical opacity-50" />
-                        <div className="relative z-10 flex items-center">
-                        <facility.icon className="w-5 h-5 text-primary mr-3" />
-                        <div>
-                          <div className="font-medium text-foreground font-orbitron text-sm">{facility.name}</div>
-                          <div className="text-xs text-muted-foreground font-inter">{facility.description}</div>
-                        </div>
-                      </div>
-                      </MagicCard>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="scan-line-top" />
-              <div className="scan-line-bottom" />
-              </MagicCard>
-            </motion.div>
           </motion.div>
         </div>
       </div>

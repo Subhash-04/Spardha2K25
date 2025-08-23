@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { Code, Palette, Wrench, Terminal, Users, Brain, FileText, Star } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import LazyImage from '../ui/LazyImage';
-import blindPoster from '../../assets/images/blind.jpg';
-import paperPoster from '../../assets/images/paper.jpg';
-import traditionalPoster from '../../assets/images/Traditional.jpg';
-import promptPoster from '../../assets/images/prompt.jpg';
+import blindPoster from '../../assets/images/blind.png';
+import paperPoster from '../../assets/images/paper.png';
+import traditionalPoster from '../../assets/images/Traditional.png';
+import promptPoster from '../../assets/images/prompt.png';
 import spotImage1 from '../../assets/images/1.png';
 import spotImage2 from '../../assets/images/2.png';
 import spotImage3 from '../../assets/images/3.png';
@@ -111,33 +111,33 @@ const Events: React.FC = () => {
       {
         id: 1,
         eventId: "spot-event-1",
-        title: "Image Word Guessing",
+        title: "Term Twist",
         image: spotImage1,
-        description: "Fun word-guessing game with images",
+        description: "Unscramble tech terms in record time",
         onClick: () => navigate('/event/spot-event-1'),
       },
       {
         id: 2,
         eventId: "spot-event-2", 
-        title: "Tech Trivia",
+        title: "Think Tac Toe",
         image: spotImage2,
-        description: "Test your tech knowledge",
+        description: "Strategic tic-tac-toe with logic questions",
         onClick: () => navigate('/event/spot-event-2'),
       },
       {
         id: 3,
         eventId: "spot-event-3",
-        title: "Code Debugging",
+        title: "Queen Quest",
         image: spotImage3,
-        description: "Find and fix bugs in code",
+        description: "Place 8 queens strategically on chessboard",
         onClick: () => navigate('/event/spot-event-3'),
       },
       {
         id: 4,
         eventId: "spot-event-4",
-        title: "UI/UX Design",
+        title: "Flash Focus",
         image: spotImage4,
-        description: "Create beautiful UI/UX designs",
+        description: "Memory challenge with tech images",
         onClick: () => navigate('/event/spot-event-4'),
       },
     ],
@@ -145,33 +145,33 @@ const Events: React.FC = () => {
       {
         id: 5,
         eventId: "spot-event-5",
-        title: "Spot Event 5",
+        title: "Skill Shot",
         image: spotImage5,
-        description: "First spot event challenge for Day 2",
+        description: "Categorize tech terms accurately",
         onClick: () => navigate('/event/spot-event-5'),
       },
       {
         id: 6,
         eventId: "spot-event-6",
-        title: "Spot Event 6",
+        title: "Core Hunt",
         image: spotImage6,
-        description: "Second spot event for Day 2",
+        description: "Identify CPU components and functions",
         onClick: () => navigate('/event/spot-event-6'),
       },
       {
         id: 7,
         eventId: "spot-event-7",
-        title: "Spot Event 7",
+        title: "Tower of Hanoi",
         image: spotImage7,
-        description: "Third spot event challenge for Day 2",
+        description: "Solve the classic disk puzzle",
         onClick: () => navigate('/event/spot-event-7'),
       },
       {
         id: 8,
         eventId: "spot-event-8",
-        title: "Spot Event 8",
+        title: "Roll Storm",
         image: spotImage8,
-        description: "Final spot event for Day 2",
+        description: "Dice rolling competition for highest score",
         onClick: () => navigate('/event/spot-event-8'),
       },
     ],

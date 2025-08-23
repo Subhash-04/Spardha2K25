@@ -122,25 +122,22 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Newsletter */}
+          {/* Live Status */}
           <div className="space-y-6 animate-fade-in-up animation-delay-500">
             <div className="dashboard-glass px-4 py-3 rounded-lg inline-block shadow-glow animate-glow-subtle">
-              <h4 className="text-lg font-orbitron text-gradient">Join Our Community</h4>
+              <h4 className="text-lg font-orbitron text-gradient">Live Status</h4>
             </div>
-            <p className="text-sm text-muted-foreground font-inter">
-              Subscribe to our newsletter for updates and exclusive content.
-            </p>
-            <div className="flex">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="bg-background/60 border border-border/50 rounded-l-lg px-4 py-2 w-full font-orbitron text-sm focus:outline-none focus:ring-2 focus:ring-primary/70 focus:shadow-glow"
-              />
-              <button 
-                className="crystal-glass px-4 py-2 rounded-r-lg border-y border-r border-border/50 text-primary font-orbitron text-sm hover:bg-primary/10 shadow-glow-sm hover:shadow-primary/60 hover:text-shadow-glow active:scale-95 transition-all duration-300"
-              >
-                <ExternalLink className="w-4 h-4" />
-              </button>
+            <div className="space-y-4">
+              <div className="crystal-glass p-4 rounded-lg relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 animate-pulse"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-xs font-orbitron text-green-400">SYSTEM ONLINE</span>
+                  </div>
+                  <div className="text-sm text-muted-foreground font-inter">Registration Portal Active</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

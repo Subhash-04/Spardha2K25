@@ -629,6 +629,7 @@ header {
 .dashboard-glass *,
 .card--border-glow * {
   border-color: transparent !important;
+  border: none !important;
 }
 
 /* Specific fix for rounded elements */
@@ -638,6 +639,88 @@ header {
 .rounded-2xl,
 .rounded-3xl {
   border-color: transparent !important;
+  border: none !important;
+}
+
+/* Fix for crystal-glass border artifacts */
+.crystal-glass {
+  border-radius: 24px !important;
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+  overflow: hidden;
+}
+
+/* Specific fix for rounded-full crystal-glass elements */
+.crystal-glass.rounded-full {
+  border-radius: 9999px !important;
+}
+
+/* Fix for card border radius */
+.card--border-glow {
+  border-radius: 24px !important;
+  overflow: hidden;
+}
+
+/* Specific border radius for Day 1/Day 2 buttons and the 4 mentioned buttons */
+.neu-button {
+  border-radius: 12px !important;
+}
+
+/* Day navigation buttons */
+button:has(.text-sm) {
+  border-radius: 8px !important;
+}
+
+/* Specific buttons with previous radius */
+button.crystal-glass {
+  border-radius: 12px !important;
+}
+
+button.neu-button {
+  border-radius: 12px !important;
+}
+
+/* Fix Instagram and LinkedIn buttons in footer */
+a.crystal-glass {
+  border-radius: 8px !important;
+}
+
+/* Circular div with rounded-full */
+div.absolute.inset-0.bg-gradient-to-r {
+  border-radius: 9999px !important;
+}
+
+/* Specific divs with previous rectangular border radius */
+div.dashboard-glass {
+  border-radius: 8px !important;
+}
+
+div.crystal-facet-corner {
+  border-radius: 8px !important;
+}
+
+/* Override for specific dashboard glass elements */
+.dashboard-glass.px-4.py-3.rounded-lg {
+  border-radius: 8px !important;
+}
+
+/* Green hover effect for free registration card */
+.magic-card:hover {
+  box-shadow: 0 4px 20px rgba(var(--glow-color), 0.4), 0 0 30px rgba(var(--glow-color), 0.3) !important;
+}
+
+.magic-card:hover::after {
+  background: radial-gradient(800px circle at var(--glow-x) var(--glow-y), 
+    rgba(var(--glow-color), 0.2), 
+    transparent 30%) !important;
+}
+
+/* Ensure all child elements have no borders */
+.crystal-glass *,
+.crystal-glass > *,
+.crystal-glass div {
+  border: none !important;
+  border-color: transparent !important;
+  outline: none !important;
 }
 
 /* Ensure all sections have proper spacing for fixed navbar */
