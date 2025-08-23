@@ -186,7 +186,7 @@ const MainMedia: React.FC = () => {
                     </video>
                     
                     <span className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
-                    <figcaption className="absolute -bottom-12 left-2 md:bottom-4 md:left-4">
+                    <figcaption className="absolute bottom-16 left-2 md:bottom-4 md:left-4 bg-black/50 backdrop-blur-sm rounded-lg p-2">
                       <h3 className="text-base md:text-2xl font-bold text-white font-audiowide mb-1 md:mb-2">
                         Teaser Video
                       </h3>
