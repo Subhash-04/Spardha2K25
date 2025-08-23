@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Code, Palette, Wrench, Terminal, Users, Brain, FileText } from 'lucide-react';
+import { Code, Palette, Wrench, Terminal, Users, Brain, FileText, Star } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import LazyImage from '../ui/LazyImage';
 import blindPoster from '../../assets/images/blind.jpg';
@@ -85,7 +85,7 @@ const Events: React.FC = () => {
         icon: FileText,
         participants: "Teams of 3",
         description: "Platform where innovation meets imagination through presentations",
-        gradient: "from-green-400 to-green-600",
+        gradient: "from-orange-400 to-orange-600",
         poster: paperPoster,
       },
       {
@@ -96,7 +96,7 @@ const Events: React.FC = () => {
         time: "9:30 AM",
         venue: "AI Lab",
         category: "technical",
-        icon: Brain,
+        icon: Star,
         participants: "Individual (1)",
         description: "Solve enchanted puzzles to craft powerful prompts",
         gradient: "from-purple-400 to-purple-600",

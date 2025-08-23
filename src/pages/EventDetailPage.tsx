@@ -100,7 +100,7 @@ const eventData: Record<string, any> = {
     category: "technical",
     participants: "Teams of 3",
     description: "Platform where innovation meets imagination through presentations",
-     gradient: "from-green-400 to-green-600",
+     gradient: "from-orange-400 to-orange-600",
    },
    'prompt-realm': {
     title: "Prompt Realm",
