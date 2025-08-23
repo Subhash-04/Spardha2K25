@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Code, Palette, Wrench, Terminal, Users, Brain, FileText } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import LazyImage from '../ui/LazyImage';
-import PixelTransition from '../ui/PixelTransition';
+
 import blindPoster from '../../assets/images/blind.jpg';
 import paperPoster from '../../assets/images/paper.jpg';
 import traditionalPoster from '../../assets/images/Traditional.jpg';
@@ -326,47 +326,17 @@ const Events: React.FC = () => {
                       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-radial from-cyan-400/20 to-transparent rounded-full animate-ping"></div>
                     </div>
                     
-                    {/* Event Poster Image with Pixel Transition */}
+                    {/* Event Poster Image - Larger size */}
                     <div className="w-full h-64 sm:h-[280px] lg:h-[320px] relative rounded-t-3xl overflow-hidden flex-shrink-0">
-                      <PixelTransition
-                        firstContent={
-                          <div className="relative w-full h-full">
-                            <img 
-                              src={event.poster} 
-                              alt={event.title}
-                              className="w-full h-full object-contain object-center"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
-                            {/* Geometric overlay effects */}
-                            <div className="absolute top-4 right-4 w-8 h-8 border-2 border-cyan-400/50 rotate-45 animate-spin-slow"></div>
-                            <div className="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-full animate-bounce"></div>
-                          </div>
-                        }
-                        secondContent={
-                          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm">
-                            <div className="text-center p-6">
-                              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient font-audiowide mb-2">
-                                {event.title}
-                              </h3>
-                              <p className="text-lg text-primary font-orbitron font-medium">
-                                {event.tagline}
-                              </p>
-                              <div className="mt-4 flex items-center justify-center gap-2">
-                                <event.icon className="w-6 h-6 text-primary" />
-                                <span className="text-sm text-muted-foreground font-inter">
-                                  {event.time} • {event.venue}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        }
-                        gridSize={12}
-                        pixelColor="rgba(59, 130, 246, 0.8)"
-                        animationStepDuration={0.4}
-                        className="w-full h-full rounded-t-3xl"
-                        style={{ width: '100%', height: '100%' }}
-                        aspectRatio="0%"
+                      <img 
+                        src={event.poster} 
+                        alt={event.title}
+                        className="w-full h-full object-contain object-center transition-transform duration-500 hover:scale-110 event-poster"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
+                      {/* Geometric overlay effects */}
+                      <div className="absolute top-4 right-4 w-8 h-8 border-2 border-cyan-400/50 rotate-45 animate-spin-slow"></div>
+                      <div className="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-full animate-bounce"></div>
                     </div>
                     
                     {/* Content section pushed to bottom */}

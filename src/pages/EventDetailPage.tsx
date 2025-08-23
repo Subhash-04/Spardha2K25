@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Users, Clock, MapPin, ExternalLink, CheckCircle } from 'lucide-react';
 import MagicCard from '../components/ui/MagicCard';
 import LazyImage from '../components/ui/LazyImage';
+import { PixelTransition } from '../components/ui/PixelTransition';
 
 // Import images
 import blindPoster from '../assets/images/blind.jpg';
@@ -459,10 +460,41 @@ const EventDetailPage: React.FC = () => {
                 </div>
 
                 <div className="relative z-10">
-                  <LazyImage
-                    src={event.poster}
-                    alt={event.title}
-                    className="w-full h-auto rounded-2xl shadow-2xl"
+                  <PixelTransition
+                    firstContent={
+                      <div className="relative w-full">
+                        <img 
+                          src={event.poster} 
+                          alt={event.title}
+                          className="w-full h-auto rounded-2xl shadow-2xl"
+                        />
+                      </div>
+                    }
+                    secondContent={
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm rounded-2xl">
+                        <div className="text-center p-8">
+                          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient font-audiowide mb-4">
+                            {event.title}
+                          </h3>
+                          {event.tagline && (
+                            <p className="text-xl text-primary font-orbitron font-medium mb-4">
+                              {event.tagline}
+                            </p>
+                          )}
+                          <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                            <span className="text-lg font-inter">
+                              {event.eventType}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                    gridSize={15}
+                    pixelColor="rgba(59, 130, 246, 0.9)"
+                    animationStepDuration={0.3}
+                    className="w-full rounded-2xl shadow-2xl"
+                    style={{ width: '100%', aspectRatio: 'auto' }}
+                    aspectRatio="auto"
                   />
                 </div>
 
