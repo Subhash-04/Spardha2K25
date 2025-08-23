@@ -512,29 +512,10 @@ const Events: React.FC = () => {
                           className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-400/20 hover:border-blue-400/40 transition-all duration-300`}
                         >
                           <div className="flex-shrink-0">
-                            <PixelTransition
-                              firstContent={
-                                <LazyImage
-                                  src={event.image}
-                                  alt={event.title}
-                                  className="w-full h-full object-cover"
-                                />
-                              }
-                              secondContent={
-                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/30 to-secondary/30 backdrop-blur-sm">
-                                  <div className="text-center p-2">
-                                    <h4 className="text-sm sm:text-base font-bold text-gradient font-audiowide">
-                                      {event.title}
-                                    </h4>
-                                  </div>
-                                </div>
-                              }
-                              gridSize={8}
-                              pixelColor="rgba(59, 130, 246, 0.6)"
-                              animationStepDuration={0.3}
-                              className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg border-2 border-blue-400/30"
-                              style={{ width: '100%', height: '100%' }}
-                              aspectRatio="0%"
+                            <LazyImage
+                              src={event.image}
+                              alt={event.title}
+                              className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover border-2 border-blue-400/30"
                             />
                           </div>
                           

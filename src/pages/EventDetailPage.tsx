@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Users, Clock, MapPin, ExternalLink, CheckCircle } from 'lucide-react';
 import MagicCard from '../components/ui/MagicCard';
 import LazyImage from '../components/ui/LazyImage';
-import { PixelTransition } from '../components/ui/PixelTransition';
+import PixelTransition from '../components/ui/PixelTransition';
 
 // Import images
 import blindPoster from '../assets/images/blind.jpg';
