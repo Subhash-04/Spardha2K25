@@ -279,7 +279,7 @@ const Hero: React.FC = () => {
             </MagicCard>
             
             <MagicCard
-              className="card--border-glow"
+              className="card--border-glow cursor-pointer"
               glowColor="0, 200, 255" 
               enableTilt={false}
               enableMagnetism={true}
@@ -287,7 +287,10 @@ const Hero: React.FC = () => {
               particleCount={6}
               disableStars={false}
             >
-              <div className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full hero-card-fix">
+              <div 
+                className="flex items-center gap-3 crystal-glass px-6 py-3 rounded-full hero-card-fix hover:bg-primary/10 transition-colors"
+                onClick={() => window.open('https://www.google.com/maps/dir//Vasireddy+Venkatadri+International+Technological+University,+Namburu,+Pedakakani,+Andhra+Pradesh+522508/@16.343460,80.524287,17z', '_blank')}
+              >
                 <MapPin className="w-5 h-5 text-accent" />
                 <span className="text-foreground font-orbitron">VVITU, Nambur, Guntur</span>
               </div>

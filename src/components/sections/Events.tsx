@@ -256,11 +256,11 @@ const Events: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.h3
-            variants={itemVariants}
-            className="text-2xl sm:text-3xl font-bold text-gradient font-audiowide mb-8 text-center"
-          >
-            Featured Events
-          </motion.h3>
+             variants={itemVariants}
+             className="text-2xl sm:text-3xl font-bold text-gradient font-audiowide mb-8 text-center"
+           >
+             Main Events
+           </motion.h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {[
               { title: "CodeVerse", eventId: "codeverse", gradient: "from-blue-400 to-blue-600" },
