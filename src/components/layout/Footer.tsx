@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     { name: 'Home', link: '#home', type: 'scroll' },
     { name: 'Events', link: '#events', type: 'scroll' },
     { name: 'Campus', link: '/campus', type: 'navigate' },
-    { name: 'Register', link: '#register', type: 'scroll' },
+    { name: 'Register', link: 'https://acm.vvitguntur.com/contact-us/register', type: 'external' },
     { name: 'About', link: '#about', type: 'scroll' },
   ];
 
@@ -26,6 +26,10 @@ const Footer: React.FC = () => {
     if (link.type === 'navigate') {
       // For campus page navigation
       window.location.href = link.link;
+    } else if (link.type === 'external') {
+      // For external links like register
+      e.preventDefault();
+      window.open(link.link, '_blank');
     } else if (isOnEventOrCampusPage) {
       // When on event or campus pages, redirect to main page with appropriate sections
       e.preventDefault();
@@ -33,19 +37,9 @@ const Footer: React.FC = () => {
         window.location.href = '/';
       } else if (link.name === 'About') {
         window.location.href = '/#about';
-      } else if (link.name === 'Register') {
-        // Redirect to main page and scroll to register button in main media
-        window.location.href = '/#register';
       } else {
         // For other links, redirect to main page with hash
         window.location.href = `/${link.link}`;
-      }
-    } else if (link.name === 'Register') {
-      // For register button scroll on main page
-      e.preventDefault();
-      const registerElement = document.querySelector('[data-register-button]');
-      if (registerElement) {
-        registerElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     } else {
       // For other scroll links on main page

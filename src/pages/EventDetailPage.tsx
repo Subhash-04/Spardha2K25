@@ -492,7 +492,10 @@ const EventDetailPage: React.FC = () => {
 
               {/* Action Buttons */}
               <motion.div variants={itemVariants} className="flex justify-center">
-                <button className="crystal-glass px-8 py-4 rounded-2xl text-primary font-orbitron font-bold hover:bg-primary/10 shadow-glow flex items-center justify-center gap-3 btn-enhanced hover-glow transition-smooth">
+                <button 
+                  onClick={() => window.open('https://acm.vvitguntur.com/contact-us/register', '_blank')}
+                  className="crystal-glass px-8 py-4 rounded-2xl text-primary font-orbitron font-bold hover:bg-primary/10 shadow-glow flex items-center justify-center gap-3 btn-enhanced hover-glow transition-smooth"
+                >
                   <ExternalLink className="w-5 h-5" />
                   Register Now
                 </button>
