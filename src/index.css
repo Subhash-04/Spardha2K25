@@ -30,6 +30,12 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Enhanced smooth scrolling for all elements */
+* {
+  scroll-behavior: smooth;
 }
 
 /* Enhanced transitions for interactive elements */

@@ -145,11 +145,11 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground font-inter">spardha2025@vvitu.ac.in</span>
+                <span className="text-sm text-muted-foreground font-inter">acm.vvit@gmail.com</span>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground font-inter">+91 82973 40096</span>
+                <span className="text-sm text-muted-foreground font-inter">+91 78426 71226</span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
