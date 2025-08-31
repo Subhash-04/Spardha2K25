@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
@@ -7,6 +7,11 @@ import Events from '../components/sections/Events';
 interface EventsPageProps {}
 
 const EventsPage: React.FC<EventsPageProps> = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       {/* Background Grid */}

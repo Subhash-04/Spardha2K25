@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 
 // Layout Components
 import Header from '../components/layout/Header';
@@ -18,6 +18,11 @@ const SectionLoader = () => (
 interface CampusPageProps {}
 
 const CampusPage: React.FC<CampusPageProps> = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Apply global glow effects to all cards */}
