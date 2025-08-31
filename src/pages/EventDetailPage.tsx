@@ -410,10 +410,12 @@ const EventDetailPage: React.FC = () => {
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="font-inter">{event.venue}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-primary" />
-                <span className="font-inter">Team Size: {event.teamSize}</span>
-              </div>
+              {event.eventType !== 'Spot Event' && (
+                <div className="flex items-center gap-2">
+                  <Users className="w-4 h-4 text-primary" />
+                  <span className="font-inter">Team Size: {event.teamSize}</span>
+                </div>
+              )}
             </div>
           </motion.div>
 
@@ -471,10 +473,12 @@ const EventDetailPage: React.FC = () => {
                         Event Rules
                       </h3>
                       <ul className="space-y-2 text-muted-foreground font-inter">
-                        <li className="flex items-start gap-3">
-                          <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                          Team size: {event.teamSize}
-                        </li>
+                        {event.eventType !== 'Spot Event' && (
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                            Team size: {event.teamSize}
+                          </li>
+                        )}
                         {event.rules && event.rules.slice(0, 3).map((rule: string, index: number) => (
                           <li key={index} className="flex items-start gap-3">
                             <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
@@ -492,13 +496,33 @@ const EventDetailPage: React.FC = () => {
 
               {/* Action Buttons */}
               <motion.div variants={itemVariants} className="flex justify-center">
-                <button 
-                  onClick={() => window.open('https://acm.vvitguntur.com/contact-us/register', '_blank')}
-                  className="crystal-glass px-8 py-4 rounded-2xl text-primary font-orbitron font-bold hover:bg-primary/10 shadow-glow flex items-center justify-center gap-3 btn-enhanced hover-glow transition-smooth"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                  Register Now
-                </button>
+                {event.eventType === 'Spot Event' ? (
+                  <div className="text-center space-y-4">
+                    <div className="crystal-glass px-6 py-4 rounded-2xl border border-accent/30 bg-accent/5">
+                      <p className="text-accent font-orbitron font-medium mb-2">
+                        No Pre-Registration Required
+                      </p>
+                      <p className="text-sm text-muted-foreground font-inter">
+                        This is a spot event - just show up and participate!
+                      </p>
+                    </div>
+                    <button 
+                      onClick={() => window.open('https://acm.vvitguntur.com/contact-us/register', '_blank')}
+                      className="crystal-glass px-6 py-3 rounded-xl text-primary font-orbitron font-medium hover:bg-primary/10 shadow-glow flex items-center justify-center gap-2 btn-enhanced hover-glow transition-smooth"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Register for Main Events
+                    </button>
+                  </div>
+                ) : (
+                  <button 
+                    onClick={() => window.open('https://acm.vvitguntur.com/contact-us/register', '_blank')}
+                    className="crystal-glass px-8 py-4 rounded-2xl text-primary font-orbitron font-bold hover:bg-primary/10 shadow-glow flex items-center justify-center gap-3 btn-enhanced hover-glow transition-smooth"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    Register Now
+                  </button>
+                )}
               </motion.div>
             </motion.div>
 
