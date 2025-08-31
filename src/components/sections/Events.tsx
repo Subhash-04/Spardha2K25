@@ -83,7 +83,7 @@ const Events: React.FC = () => {
         venue: "Seminar Hall",
         category: "technical",
         icon: FileText,
-        participants: "Teams of 3",
+        participants: "Teams of 2-3",
         description: "Platform where innovation meets imagination through presentations",
         gradient: "from-orange-400 to-orange-600",
         poster: paperPoster,

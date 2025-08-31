@@ -75,7 +75,7 @@ const eventData: Record<string, any> = {
     time: "9:00 AM",
     venue: "Seminar Hall",
     eventType: "Main Event",
-    teamSize: "Teams of 3",
+    teamSize: "Teams of 2-3",
     about: "The Paper Presentation at Spardha 2025, VVIT is a platform where innovation meets imagination. Each team, through 8 slides and 6 minutes, unveils a new dimension of ideas and solutions. Teams must select one domain from the provided list and present their technological solutions and research findings. Covering domains from AI to Blockchain, every presentation is a portal to discovery. It's not just a contest, but a journey through the multiverse of possibilities.",
     domains: [
       "AI (ML, DL, LLM)",
@@ -98,7 +98,7 @@ const eventData: Record<string, any> = {
     ],
     poster: paperPoster,
     category: "technical",
-    participants: "Teams of 3",
+    participants: "Teams of 2-3",
     description: "Platform where innovation meets imagination through presentations",
      gradient: "from-orange-400 to-orange-600",
    },
