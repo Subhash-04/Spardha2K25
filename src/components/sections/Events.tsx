@@ -247,6 +247,47 @@ const Events: React.FC = () => {
           </motion.p>
         </motion.div>
 
+        {/* Featured Events */}
+        <motion.div
+          className="mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.h3
+            variants={itemVariants}
+            className="text-2xl sm:text-3xl font-bold text-gradient font-audiowide mb-8 text-center"
+          >
+            Featured Events
+          </motion.h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[
+              { title: "CodeVerse", eventId: "codeverse", gradient: "from-blue-400 to-blue-600" },
+              { title: "Blind Sync", eventId: "blind-sync", gradient: "from-pink-400 to-pink-600" },
+              { title: "Tech Thesis", eventId: "tech-thesis", gradient: "from-orange-400 to-orange-600" },
+              { title: "Prompt Realm", eventId: "prompt-realm", gradient: "from-purple-400 to-purple-600" }
+            ].map((event, index) => (
+              <motion.button
+                key={event.eventId}
+                onClick={() => navigate(`/event/${event.eventId}`)}
+                className="crystal-glass p-4 rounded-xl hover:bg-primary/10 transition-all duration-300 group"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className={`w-full h-2 bg-gradient-to-r ${event.gradient} rounded-full mb-3 group-hover:shadow-lg transition-all duration-300`} />
+                <h4 className="font-orbitron font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                  {event.title}
+                </h4>
+                <div className="mt-2 text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                  View Details →
+                </div>
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Day Selector */}
         <motion.div
           className="flex justify-center mb-12"
