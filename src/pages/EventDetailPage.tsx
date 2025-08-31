@@ -402,14 +402,12 @@ const EventDetailPage: React.FC = () => {
                 <Calendar className="w-4 h-4 text-primary" />
                 <span className="font-inter">{event.date}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-primary" />
-                <span className="font-inter">{event.time}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span className="font-inter">{event.venue}</span>
-              </div>
+              {event.eventType !== 'Spot Event' && (
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span className="font-inter">{event.time}</span>
+                </div>
+              )}
               {event.eventType !== 'Spot Event' && (
                 <div className="flex items-center gap-2">
                   <Users className="w-4 h-4 text-primary" />
