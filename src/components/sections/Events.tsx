@@ -496,6 +496,18 @@ const Events: React.FC = () => {
                   </Suspense>
                 </div>
                 
+                {/* Mobile Scroll Message */}
+                {isMobile && (
+                  <motion.div
+                    className="text-center mt-4 mb-4"
+                    variants={itemVariants}
+                  >
+                    <p className="text-xs text-muted-foreground font-inter opacity-75">
+                      Tap and drag to navigate • Click center card to view details
+                    </p>
+                  </motion.div>
+                )}
+                
                 {/* More Details Button */}
                 <div className="text-center mt-8">
                   <motion.button

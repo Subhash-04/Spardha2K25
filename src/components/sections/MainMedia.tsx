@@ -135,6 +135,19 @@ const MainMedia: React.FC = () => {
             </motion.div>
           </motion.section>
 
+          {/* Registration Message */}
+          <motion.div
+            className="text-center mt-4 mb-8"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <p className="text-sm text-muted-foreground font-inter opacity-75">
+              Click here for registration
+            </p>
+          </motion.div>
+
           {/* Experience Spardha 2K25 Section */}
           <motion.section
             id="main-video-section"
