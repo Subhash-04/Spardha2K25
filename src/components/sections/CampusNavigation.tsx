@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Building, Cpu, FlaskConical, Microscope } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
-import navImage from '../../assets/images/nav.png';
+import navImage from '../../assets/optimized/images/nav.jpg';
 
 interface CampusBlock {
   id: string;

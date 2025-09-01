@@ -6,18 +6,18 @@ import MagicCard from '../components/ui/MagicCard';
 import LazyImage from '../components/ui/LazyImage';
 
 // Import images
-import blindPoster from '../assets/images/blind.png';
-import paperPoster from '../assets/images/paper.png';
-import traditionalPoster from '../assets/images/Traditional.png';
-import promptPoster from '../assets/images/prompt.png';
+import blindPoster from '../assets/optimized/images/blind.jpg';
+import paperPoster from '../assets/optimized/images/paper.jpg';
+import traditionalPoster from '../assets/optimized/images/Traditional.jpg';
+import promptPoster from '../assets/optimized/images/prompt.jpg';
 // Import spot event images
 import spotEvent1 from '../assets/images/1.png';
 import spotEvent2 from '../assets/images/2.png';
 import spotEvent3 from '../assets/images/3.png';
 import spotEvent4 from '../assets/images/4.png';
 import spotEvent5 from '../assets/images/5.png';
-import spotEvent6 from '../assets/images/6.png';
-import spotEvent7 from '../assets/images/7.png';
+import spotEvent6 from '../assets/optimized/images/6.jpg';
+import spotEvent7 from '../assets/optimized/images/7.jpg';
 import spotEvent8 from '../assets/images/8.png';
 
 // Event data mapping

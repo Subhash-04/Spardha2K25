@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Image as ImageIcon } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import LazyImage from '../ui/LazyImage';
-import mainPoster from '../../assets/images/main.png';
+import mainPoster from '../../assets/optimized/images/main.jpg';
 import mainVideo from '../../assets/videos/promo.mp4'; // Updated to use promo video
 
 const MainMedia: React.FC = () => {
