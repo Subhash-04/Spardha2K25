@@ -143,9 +143,14 @@ const MainMedia: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <p className="text-sm text-muted-foreground font-inter opacity-75">
-              Click here for registration
-            </p>
+            <div className="flex flex-col items-center gap-1">
+              <div className="text-muted-foreground opacity-75 animate-bounce">
+                ↑
+              </div>
+              <p className="text-sm text-muted-foreground font-inter opacity-75">
+                Click here for registration
+              </p>
+            </div>
           </motion.div>
 
           {/* Experience Spardha 2K25 Section */}
