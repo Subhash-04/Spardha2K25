@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ParticleCard } from './MagicBento';
 
 interface MagicCardProps {
@@ -13,7 +13,7 @@ interface MagicCardProps {
   disableAnimations?: boolean;
 }
 
-const MagicCard: React.FC<MagicCardProps> = ({
+const MagicCard: React.FC<MagicCardProps> = memo(({
   children,
   className = "",
   glowColor = "0, 200, 255", // updated cyan blue color
@@ -47,5 +47,7 @@ const MagicCard: React.FC<MagicCardProps> = ({
     </ParticleCard>
   );
 };
+
+});
 
 export default MagicCard;

@@ -19,6 +19,7 @@ const MainMedia = React.lazy(() => import('../components/sections/MainMedia'));
 const CampusNavigation = React.lazy(() => import('../components/sections/CampusNavigation'));
 const Contact = React.lazy(() => import('../components/sections/Contact'));
 
+
 // Loading component for better UX
 const SectionLoader = () => (
   <div className="flex items-center justify-center py-20">
@@ -61,7 +62,7 @@ const MainPage: React.FC<MainPageProps> = () => {
         {/* Hero Section - Loaded immediately for faster initial render */}
         <Hero />
 
-        {/* Events Section */}
+        {/* Events Section */
         <Suspense fallback={<SectionLoader />}>
           <Events />
         </Suspense>

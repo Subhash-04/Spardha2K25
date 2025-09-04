@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useRef, useMemo, memo } from 'react';
 import { ArrowRight, Calendar, MapPin } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import { usePerformanceOptimizer } from '../../utils/performanceOptimizer';
 
-const Hero: React.FC = () => {
+const Hero: React.FC = memo(() => {
   const sectionRef = useRef<HTMLElement>(null);
   const { preloadAssets } = usePerformanceOptimizer({
     enableMediaCache: true,
@@ -417,5 +417,7 @@ const Hero: React.FC = () => {
     </section>
   );
 };
+
+});
 
 export default Hero;

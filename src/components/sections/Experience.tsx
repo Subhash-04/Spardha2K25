@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import { motion } from 'framer-motion';
 import MagicCard from '../ui/MagicCard';
 
 // Import main video
 import mainVideo from '../../assets/videos/main.mp4'; // Temporarily disabled for optimization
 
-const Experience: React.FC = () => {
+const Experience: React.FC = memo(() => {
   const videoRef = useRef<HTMLVideoElement>(null);
   
   const containerVariants = {
@@ -321,6 +321,6 @@ const Experience: React.FC = () => {
       ))}
     </section>
   );
-};
+});
 
 export default Experience;

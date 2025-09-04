@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Users, Calendar, Trophy, Zap } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 
-const About: React.FC = () => {
+const About: React.FC = memo(() => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,14 +31,14 @@ const About: React.FC = () => {
     },
   };
 
-  const stats = [
+  const stats = useMemo(() => [
     { icon: Users, value: "5000+", label: "Participants", color: "text-primary" },
     { icon: Trophy, value: "4", label: "Events", color: "text-accent" },
     { icon: Calendar, value: "2", label: "Days", color: "text-primary" },
     { icon: Zap, value: "∞", label: "Energy", color: "text-accent" },
-  ];
+  ], []);
 
-  const features = [
+  const features = useMemo(() => [
     {
       title: "Problem Solving Mastery",
       description: "Develop algorithmic thinking and coding expertise through CodeVerse challenges",
@@ -59,7 +59,7 @@ const About: React.FC = () => {
       description: "Learn prompt engineering and AI interaction through Prompt Realm",
       gradient: "from-white to-gray-200",
     },
-  ];
+  ], []);
 
   return (
     <section id="about" className="py-20 relative overflow-hidden">
@@ -284,6 +284,6 @@ const About: React.FC = () => {
       ))}
     </section>
   );
-};
+});
 
 export default About;
