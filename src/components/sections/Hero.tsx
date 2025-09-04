@@ -416,8 +416,6 @@ const Hero: React.FC = memo(() => {
 
     </section>
   );
-};
-
 });
 
 export default Hero;

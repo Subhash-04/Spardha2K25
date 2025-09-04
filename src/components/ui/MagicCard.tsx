@@ -46,8 +46,6 @@ const MagicCard: React.FC<MagicCardProps> = memo(({
       {children}
     </ParticleCard>
   );
-};
-
 });
 
 export default MagicCard;
