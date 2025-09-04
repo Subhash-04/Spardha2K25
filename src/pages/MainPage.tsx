@@ -62,7 +62,7 @@ const MainPage: React.FC<MainPageProps> = () => {
         {/* Hero Section - Loaded immediately for faster initial render */}
         <Hero />
 
-        {/* Events Section */
+        {/* Events Section */}
         <Suspense fallback={<SectionLoader />}>
           <Events />
         </Suspense>
