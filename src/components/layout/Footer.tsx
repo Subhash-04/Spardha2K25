@@ -217,7 +217,15 @@ const Footer: React.FC = () => {
             
             <div className="flex items-center gap-2 animate-fade-in-up animation-delay-1000">
               <span className="text-sm text-muted-foreground font-audiowide">Made with passion</span>
-              <span className="text-sm text-primary font-bold font-audiowide">by VVITU ACM</span>
+              <span className="text-sm text-muted-foreground font-audiowide">by </span>
+              <a 
+                href="https://subhash-04.github.io/Portfolio/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm text-primary font-bold font-audiowide hover:underline hover:text-accent transition-colors duration-300"
+              >
+                VVITU ACM
+              </a>
             </div>
           </div>
         </div>
