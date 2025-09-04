@@ -323,4 +323,6 @@ const Experience: React.FC = memo(() => {
   );
 });
 
+Experience.displayName = 'Experience';
+
 export default Experience;
