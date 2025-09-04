@@ -224,7 +224,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer" 
                 className="text-sm text-primary font-bold font-audiowide hover:underline hover:text-accent transition-colors duration-300"
               >
-                VVITU ACM
+                Subhash.M
               </a>
             </div>
           </div>
