@@ -16,7 +16,7 @@ const Experience = React.lazy(() => import('../components/sections/Experience'))
 const About = React.lazy(() => import('../components/sections/About'));
 const Events = React.lazy(() => import('../components/sections/Events'));
 const MainMedia = React.lazy(() => import('../components/sections/MainMedia'));
-const CampusNavigation = React.lazy(() => import('../components/sections/CampusNavigation'));
+// const CampusNavigation = React.lazy(() => import('../components/sections/CampusNavigation'));
 const Contact = React.lazy(() => import('../components/sections/Contact'));
 
 
