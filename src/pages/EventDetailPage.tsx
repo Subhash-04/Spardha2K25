@@ -55,7 +55,7 @@ const eventData: Record<string, any> = {
     teamSize: "Teams of 2",
     about: "Blind Coding is a unique team-based event where one member codes while the other guides, testing memory, communication, and coordination. Across three challenging rounds, teams must rely on trust, precision, and quick thinking under pressure. More than just coding, it's a true test of teamwork, focus, and problem-solving, where collaboration meets creativity.",
     rules: [
-      "Each team consists of 2 members",
+
       "Use only the allotted system",
       "No mobiles, smart devices, or external resources",
       "No tab switching or unauthorized apps",

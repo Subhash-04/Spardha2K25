@@ -396,7 +396,7 @@ const Events: React.FC = () => {
                                 {event.title}
                               </h3>
                               <div className="text-sm text-muted-foreground font-orbitron">
-                                {event.time} • {event.venue}
+                                {event.time}
                               </div>
                             </div>
                           </div>
