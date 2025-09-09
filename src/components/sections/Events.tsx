@@ -4,17 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import { Code, Palette, Wrench, Terminal, Users, Brain, FileText, Star } from 'lucide-react';
 import MagicCard from '../ui/MagicCard';
 import LazyImage from '../ui/LazyImage';
-import blindPoster from '../../assets/optimized/images/blind.jpg';
-import paperPoster from '../../assets/optimized/images/paper.jpg';
-import traditionalPoster from '../../assets/optimized/images/Traditional.jpg';
-import promptPoster from '../../assets/optimized/images/prompt.jpg';
+import blindPoster from '../../assets/images/blind.png';
+import paperPoster from '../../assets/images/paper.png';
+import traditionalPoster from '../../assets/images/Traditional.png';
+import promptPoster from '../../assets/images/prompt.png';
 import spotImage1 from '../../assets/images/1.png';
 import spotImage2 from '../../assets/images/2.png';
 import spotImage3 from '../../assets/images/3.png';
 import spotImage4 from '../../assets/images/4.png';
 import spotImage5 from '../../assets/images/5.png';
-import spotImage6 from '../../assets/optimized/images/6.jpg';
-import spotImage7 from '../../assets/optimized/images/7.jpg';
+import spotImage6 from '../../assets/images/6.png';
+import spotImage7 from '../../assets/images/7.png';
 import spotImage8 from '../../assets/images/8.png';
 
 // Lazy load CircularGallery for better performance
@@ -50,7 +50,6 @@ const Events: React.FC = () => {
         title: "CodeVerse",
         tagline: "Where Every Code is a Universe, and Every Coder an Saver",
         time: "9:00 AM",
-        venue: "Computer Lab Block A",
         category: "technical",
         icon: Terminal,
         participants: "Individual (1)",
@@ -64,7 +63,6 @@ const Events: React.FC = () => {
         title: "Blind Sync",
         tagline: "Two Minds One Vision",
         time: "10:00 AM",
-        venue: "Main Auditorium",
         category: "technical",
         icon: Users,
         participants: "Teams of 2",
@@ -80,7 +78,6 @@ const Events: React.FC = () => {
         title: "Tech Thesis",
         tagline: "Where Every Slide Transforms into Insights",
         time: "9:00 AM",
-        venue: "Seminar Hall",
         category: "technical",
         icon: FileText,
         participants: "Teams of 2-3",
@@ -94,7 +91,6 @@ const Events: React.FC = () => {
         title: "Prompt Realm",
         tagline: "Craft the Way through Magic and Logic",
         time: "9:30 AM",
-        venue: "AI Lab",
         category: "technical",
         icon: Star,
         participants: "Individual (1)",
